@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://wxogj22jqhf6"]
+
+[ext_resource type="Texture2D" uid="uid://bgiw0iohjxoii" path="res://Artwork/CTPawpa_background2_final.png" id="1_2bpoa"]
+[ext_resource type="Texture2D" uid="uid://duljuh66ppk74" path="res://Artwork/Cat_tiled_background.png" id="1_qvluh"]
+
+[node name="Start_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(595, 324)
+
+[node name="Yellow_Cat_BckGrnd" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -287.0
+offset_right = 1320.0
+offset_bottom = 1056.0
+texture = ExtResource("1_qvluh")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 25.0
+offset_right = 916.0
+offset_bottom = 622.0
+color = Color(0.141176, 0.117647, 0.160784, 1)
+
+[node name="Badass_Cat_BckGrnd" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 44.0
+offset_right = 897.0
+offset_bottom = 607.0
+texture = ExtResource("1_2bpoa")
+expand_mode = 1

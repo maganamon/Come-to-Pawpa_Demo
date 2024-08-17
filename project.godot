@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Come to Pawpa Demo"
+run/main_scene="res://Scenes/Menu_Scenes/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/scale=2.0
 
 [dotnet]
 
