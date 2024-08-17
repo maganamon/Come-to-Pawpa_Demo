@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1pvyj3yrgp7y"]
+
+[ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
+
+[node name="Level_One" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -37.0
+offset_right = 1260.0
+offset_bottom = 729.0
+texture = ExtResource("1_cvgrw")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(617, 354)

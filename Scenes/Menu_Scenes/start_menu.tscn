@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://wxogj22jqhf6"]
+[gd_scene load_steps=8 format=3 uid="uid://wxogj22jqhf6"]
 
 [ext_resource type="Texture2D" uid="uid://bgiw0iohjxoii" path="res://Artwork/Backgrounds/CTPawpa_background2_final.png" id="1_2bpoa"]
+[ext_resource type="Script" path="res://Scripts/Button_Scripts_GUI/start_menu.gd" id="1_h6gt8"]
 [ext_resource type="Texture2D" uid="uid://duljuh66ppk74" path="res://Artwork/Backgrounds/Cat_tiled_background.png" id="1_qvluh"]
 [ext_resource type="Texture2D" uid="uid://c2fj21xq12lqp" path="res://Artwork/GUI_Art/Unpressed_Play.png" id="3_gkrbh"]
 [ext_resource type="Texture2D" uid="uid://21r37itjxqou" path="res://Artwork/GUI_Art/Pressed_Play.png" id="4_jjxkx"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h6gt8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(619, 326)
@@ -65,3 +67,9 @@ texture_normal = ExtResource("5_kcy2e")
 texture_pressed = ExtResource("6_i6733")
 texture_hover = ExtResource("5_kcy2e")
 stretch_mode = 0
+
+[node name="menu_timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="timeout" from="menu_timer" to="." method="_on_timer_timeout"]
