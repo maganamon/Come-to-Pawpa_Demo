@@ -23,3 +23,7 @@ window/stretch/scale=2.0
 [dotnet]
 
 project/assembly_name="Come to Pawpa Demo"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
