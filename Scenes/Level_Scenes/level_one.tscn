@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1pvyj3yrgp7y"]
+[gd_scene load_steps=4 format=3 uid="uid://d1pvyj3yrgp7y"]
 
 [ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
 [ext_resource type="PackedScene" uid="uid://0krbwqa5kgvh" path="res://Scenes/Character_Scenes/playholder_player.tscn" id="2_bdmrm"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0oqpt"]
+a = Vector2(4.81998, 969.988)
+b = Vector2(0.12915, 25.9997)
 
 [node name="Level_One" type="Node2D"]
 
@@ -19,3 +23,23 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="placeholder_player" parent="." instance=ExtResource("2_bdmrm")]
 position = Vector2(602, 347)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(162, 15)
+shape = SubResource("SegmentShape2D_0oqpt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1030, 23)
+shape = SubResource("SegmentShape2D_0oqpt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(110, 141)
+rotation = -1.56583
+shape = SubResource("SegmentShape2D_0oqpt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(108, 647)
+rotation = -1.56583
+shape = SubResource("SegmentShape2D_0oqpt")
