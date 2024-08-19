@@ -6,6 +6,7 @@ var knockback = Vector2.ZERO  # To store knockback velocity
 var knockback_tween
 var knockback_decay = 0.75
 var currentDirection = "none"
+var gun_on_right = true
 
 func _ready():
 	# Play the front idle animation when the game starts
@@ -21,7 +22,31 @@ func _physics_process(delta):
 		
 # Function to handle player movement input and apply velocity
 func player_movement(_delta):
-	if Input.is_action_pressed("new_right"):
+	if Input.is_action_pressed("new_up") && Input.is_action_pressed("new_right"):
+		currentDirection = "right"  # Set current direction to right
+		playAnimation(1)  # Play walking animation
+		velocity.x = speed  # Set velocity to move right
+		velocity.y = -speed  # Stop vertical movement
+		
+	elif Input.is_action_pressed("new_up") && Input.is_action_pressed("new_left"):
+		currentDirection = "left"  # Set current direction to right
+		playAnimation(1)  # Play walking animation
+		velocity.x = -speed  # Set velocity to move right
+		velocity.y = -speed  # Stop vertical movement
+		
+	elif Input.is_action_pressed("new_down") && Input.is_action_pressed("new_right"):
+		currentDirection = "right"  # Set current direction to right
+		playAnimation(1)  # Play walking animation
+		velocity.x = speed  # Set velocity to move right
+		velocity.y = speed  # Stop vertical movement
+		
+	elif Input.is_action_pressed("new_down") && Input.is_action_pressed("new_left"):
+		currentDirection = "left"  # Set current direction to right
+		playAnimation(1)  # Play walking animation
+		velocity.x = -speed  # Set velocity to move right
+		velocity.y = speed  # Stop vertical movement
+		
+	elif Input.is_action_pressed("new_right"):
 		currentDirection = "right"  # Set current direction to right
 		playAnimation(1)  # Play walking animation
 		velocity.x = speed  # Set velocity to move right

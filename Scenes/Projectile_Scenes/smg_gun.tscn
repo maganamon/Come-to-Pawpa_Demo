@@ -22,4 +22,7 @@ position = Vector2(13, -2)
 
 [node name="FireRate_Cooldown" type="Timer" parent="."]
 
+[node name="left_gun_marker" type="Marker2D" parent="."]
+position = Vector2(-20, -2)
+
 [connection signal="timeout" from="FireRate_Cooldown" to="." method="_on_fire_rate_cooldown_timeout"]
