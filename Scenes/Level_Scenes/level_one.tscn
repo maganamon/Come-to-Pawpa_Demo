@@ -6,15 +6,16 @@
 [node name="Level_One" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -11.0
-offset_top = -37.0
-offset_right = 1260.0
-offset_bottom = 729.0
+offset_left = -29.0
+offset_top = -14.0
+offset_right = 1242.0
+offset_bottom = 752.0
 texture = ExtResource("1_cvgrw")
 expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(617, 354)
+zoom = Vector2(0.5, 0.5)
 
 [node name="placeholder_player" parent="." instance=ExtResource("2_bdmrm")]
 position = Vector2(602, 347)
