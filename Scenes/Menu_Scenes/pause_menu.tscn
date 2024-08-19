@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwxys8yq0fgw1"]
+[gd_scene load_steps=2 format=3 uid="uid://8yg27ye0pmo7"]
 
 [ext_resource type="Script" path="res://Scripts/Button_Scripts_GUI/pause_menu_control_script.gd" id="1_qsh5t"]
 
@@ -18,18 +18,24 @@ scale = Vector2(2.555, 2.555)
 script = ExtResource("1_qsh5t")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
 layout_mode = 0
-offset_right = 70.0
-offset_bottom = 66.0
+offset_left = 287.671
+offset_top = 145.205
+offset_right = 357.671
+offset_bottom = 211.205
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 1
 layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
 layout_mode = 2
 text = "Resume"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
 layout_mode = 2
 text = "Quit"
 
