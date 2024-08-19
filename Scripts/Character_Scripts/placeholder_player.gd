@@ -104,4 +104,3 @@ func playAnimation(movement):
 			animation.play("walk_up")  # Play walking animation for up
 		elif movement == 0:
 			animation.play("Idle_up")  # Play idle animation for up
-
