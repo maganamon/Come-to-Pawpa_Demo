@@ -6,6 +6,7 @@ var knockback = Vector2.ZERO  # To store knockback velocity
 var knockback_tween
 var knockback_decay = 0.75
 var currentDirection = "none"
+
 func _ready():
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
@@ -17,6 +18,7 @@ func _physics_process(delta):
 	if knockback != Vector2.ZERO:
 		velocity += knockback
 		move_and_slide()
+		
 # Function to handle player movement input and apply velocity
 func player_movement(_delta):
 	if Input.is_action_pressed("new_right"):
@@ -77,3 +79,4 @@ func playAnimation(movement):
 			animation.play("walk_up")  # Play walking animation for up
 		elif movement == 0:
 			animation.play("Idle_up")  # Play idle animation for up
+

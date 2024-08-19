@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://0krbwqa5kgvh"]
+[gd_scene load_steps=27 format=3 uid="uid://0krbwqa5kgvh"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/placeholder_player.gd" id="1_bwr26"]
 [ext_resource type="Texture2D" uid="uid://dcortfka5txig" path="res://Artwork/Character_Sprites/placeholder_player_tile.png" id="2_5ef58"]
+[ext_resource type="PackedScene" uid="uid://ct2grvpwymu1b" path="res://Scenes/Projectile_Scenes/smg_gun.tscn" id="3_mxfyj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ch7k"]
 radius = 3.99999
@@ -215,3 +216,6 @@ shape = SubResource("CapsuleShape2D_4ch7k")
 sprite_frames = SubResource("SpriteFrames_vjt88")
 animation = &"walk_right"
 frame_progress = 0.884493
+
+[node name="smg_gun" parent="." instance=ExtResource("3_mxfyj")]
+position = Vector2(4.33333, 8)

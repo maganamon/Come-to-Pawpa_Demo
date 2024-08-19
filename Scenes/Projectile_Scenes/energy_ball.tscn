@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://brm3lt2d6t3sg"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile_Scripts/energy_ball.gd" id="1_ia1pj"]
+[ext_resource type="Texture2D" uid="uid://c4yjlv4w4t5ir" path="res://Artwork/Projectile_Sprites/darker_energy_ball.png" id="1_w5oqj"]
+[ext_resource type="Texture2D" uid="uid://dk8qgemswlrh1" path="res://Artwork/Projectile_Sprites/lighter_energy_ball.png" id="2_3ohyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk3uy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w5oqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3ohyj")
+}],
+"loop": true,
+"name": &"Simple_Animation",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38iwo"]
+radius = 547.526
+
+[node name="energy_ball" type="Area2D"]
+position = Vector2(1, 1)
+scale = Vector2(0.01, 0.01)
+script = ExtResource("1_ia1pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kk3uy")
+animation = &"Simple_Animation"
+frame = 1
+frame_progress = 0.407226
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+shape = SubResource("CircleShape2D_38iwo")
