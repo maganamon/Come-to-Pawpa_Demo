@@ -1,7 +1,10 @@
 extends Control
 
+var is_game_paused = false
+
 func _ready():
 	# Connect signals for buttons
+	hide()
 	var resume_button = $MarginContainer/VBoxContainer/ResumeButton
 	var quit_button = $MarginContainer/VBoxContainer/QuitButton
 	
@@ -12,11 +15,27 @@ func _ready():
 	else:
 		print("Error: Buttons not found or not correctly set up.")
 
+func _input(event):
+	# Handle pause input even when the game is paused
+	if event.is_action_pressed("pause_menu"):
+		if is_game_paused:
+			unpause_game()
+		else:
+			pause_game()
+
+func pause_game():
+	show() #show menu
+	is_game_paused = true
+	get_tree().paused = true  # Pause the game
+
+func unpause_game():
+	hide() #hide menu
+	is_game_paused = false
+	get_tree().paused = false  # Unpause the game
+
 func _on_resume_button_pressed():
-	# Call a function in the global script to unpause the game
-	var global_script = get_tree().root.get_node("GlobalScript")
-	if global_script:
-		global_script.unpause_game()
+	unpause_game()
+
 
 func _on_quit_button_pressed():
 	get_tree().quit()  # Quit the game
