@@ -29,6 +29,10 @@ offset_bottom = 211.205
 z_index = 1
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Smoke Break?"
+
 [node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 1
 layout_mode = 2
