@@ -1,0 +1,164 @@
+[gd_scene load_steps=22 format=3 uid="uid://buswbb6d07gws"]
+
+[ext_resource type="Script" path="res://chaser_dogg.gd" id="1_u7a4c"]
+[ext_resource type="Texture2D" uid="uid://cnbd4cjru6b61" path="res://Artwork/Character_Sprites/Enemy_Sprites/Idle.png" id="2_76eun"]
+[ext_resource type="Texture2D" uid="uid://5w51jroeosyl" path="res://Artwork/Character_Sprites/Enemy_Sprites/Attack.png" id="3_xre4i"]
+[ext_resource type="Texture2D" uid="uid://bdpowb8fdu1hb" path="res://Artwork/Character_Sprites/Enemy_Sprites/Walk.png" id="4_2iukc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5he3"]
+radius = 3.04138
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhnlb"]
+atlas = ExtResource("2_76eun")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwver"]
+atlas = ExtResource("2_76eun")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nayxx"]
+atlas = ExtResource("2_76eun")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbfsl"]
+atlas = ExtResource("2_76eun")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gnnq"]
+atlas = ExtResource("3_xre4i")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d336q"]
+atlas = ExtResource("3_xre4i")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s17h7"]
+atlas = ExtResource("3_xre4i")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwvig"]
+atlas = ExtResource("3_xre4i")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltlij"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqruj"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v4ex"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_208jk"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0jx1"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dtxi"]
+atlas = ExtResource("4_2iukc")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbgie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhnlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwver")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nayxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbfsl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gnnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d336q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s17h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwvig")
+}],
+"loop": false,
+"name": &"dog_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltlij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqruj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v4ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_208jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0jx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dtxi")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dy2y7"]
+radius = 6.0
+height = 28.0
+
+[node name="Chaser_Dogg" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_u7a4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 18.5)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_y5he3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gbgie")
+animation = &"dog_attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dy2y7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Nav_Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="attack_timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Nav_Timer" to="." method="_on_nav_timer_timeout"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

@@ -1,16 +1,23 @@
 extends CharacterBody2D
 
-
+# Movement and Knockback ##
 const speed = 300.0
 var knockback = Vector2.ZERO  # To store knockback velocity
 var knockback_tween
 var knockback_decay = 0.75
 var currentDirection = "none"
 var gun_on_right = true
-
+#
+##Healing Variables ############
+var can_heal = true
+var healing_pause = 2.5
+var health_max = 100
+var health = health_max
+## Heath Variables END ##################
 # The radius of the circle around the player where the gun will follow.
 @onready var gun : = $smg_gun
 var gun_distance = 50.0
+#
 
 
 func _ready():
@@ -18,6 +25,7 @@ func _ready():
 	$AnimatedSprite2D.play("Idle")
 
 func _process(delta):
+	##Gun Moving in Circle Mechanics
 	# Get the global position of the player and the mouse.
 	var player_pos = global_position
 	var mouse_pos = get_global_mouse_position()
@@ -33,7 +41,12 @@ func _process(delta):
 		$smg_gun/Sprite2D.flip_v = true
 	else:
 		$smg_gun/Sprite2D.flip_v = false
-		
+	## Gun Circle END ####
+	
+	## Healing Rate ####
+	if (health < health_max) && can_heal:
+		health += 1
+	## Healing Rate END ####
 # This function is called every physics frame (fixed timestep)
 func _physics_process(delta):
 	# Handle player movement based on input
@@ -126,3 +139,28 @@ func playAnimation(movement):
 			animation.play("walk_up")  # Play walking animation for up
 		elif movement == 0:
 			animation.play("Idle_up")  # Play idle animation for up
+			
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Function to take damage
+func take_damage_mob(dmg_amt, pushed):
+	can_heal = false
+	health -= dmg_amt # Reduce current health by damage amount
+	health_max -= dmg_amt
+	if health <= 0:
+		health = 0
+		die()  # Call the die function if health reaches 0
+	# Have a 3 second healing cooldown after being hit ###
+	$Health_Timer.start(healing_pause)
+	## knock back logic here:
+	knockback = Vector2.ZERO + (pushed * 250)
+	knockback_tween = get_tree().create_tween()
+	knockback_tween.parallel().tween_property(self, "knockback", Vector2.ZERO, knockback_decay)
+	## Knockback Logic END #####
+	#Change color when hit
+	$AnimatedSprite2D.modulate = Color(1,0,0,1)
+	knockback_tween.parallel().tween_property($AnimatedSprite2D, "modulate", Color(1,1,1,1), knockback_decay)
+	
+func die():
+	print("PLayer Died")
+	queue_free()
+	

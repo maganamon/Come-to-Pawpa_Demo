@@ -8,7 +8,7 @@
 a = Vector2(4.81998, 969.988)
 b = Vector2(0.12915, 25.9997)
 
-[node name="Level_One" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -29.0
