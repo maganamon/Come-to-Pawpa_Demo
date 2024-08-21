@@ -8,10 +8,31 @@ var knockback_decay = 0.75
 var currentDirection = "none"
 var gun_on_right = true
 
+# The radius of the circle around the player where the gun will follow.
+@onready var gun : = $smg_gun
+var gun_distance = 50.0
+
+
 func _ready():
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
 
+func _process(delta):
+	# Get the global position of the player and the mouse.
+	var player_pos = global_position
+	var mouse_pos = get_global_mouse_position()
+	# Calculate the angle between the player and the mouse.
+	var angle = (mouse_pos - player_pos).angle()
+	# Calculate the new position for the gun.
+	var gun_position = player_pos + Vector2(0,10) + Vector2(cos(angle), sin(angle)) * gun_distance
+	# Set the gun's global position.
+	gun.global_position = gun_position
+	# Optionally, rotate the gun to face the mouse (if needed).
+	gun.rotation = angle
+	if mouse_pos.x < player_pos.x:
+		$smg_gun/Sprite2D.flip_v = true
+	else:
+		$smg_gun/Sprite2D.flip_v = false
 # This function is called every physics frame (fixed timestep)
 func _physics_process(delta):
 	# Handle player movement based on input
