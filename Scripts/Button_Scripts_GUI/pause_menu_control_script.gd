@@ -38,4 +38,10 @@ func _on_resume_button_pressed():
 
 
 func _on_quit_button_pressed():
+	$QuitButton.icon = load("res://Artwork/GUI_Art/Red_pressed.png")
+	$QuitButton/Label2.global_position.y += 5
 	get_tree().quit()  # Quit the game
+
+
+func _on_texture_button_pressed():
+	unpause_game()
