@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwxys8yq0fgw1"]
+[gd_scene load_steps=7 format=3 uid="uid://dwxys8yq0fgw1"]
 
 [ext_resource type="Script" path="res://Scripts/Button_Scripts_GUI/pause_menu_control_script.gd" id="1_qsh5t"]
+[ext_resource type="Texture2D" uid="uid://83jjl2l8ijh2" path="res://Artwork/Backgrounds/purple_smoking_cat.png" id="2_wi5uj"]
+[ext_resource type="FontFile" uid="uid://b1ffoo4aq01da" path="res://Artwork/GUI_Art/prstartk.ttf" id="3_w8oxj"]
+[ext_resource type="Texture2D" uid="uid://b6x6ugdlmajdm" path="res://Artwork/GUI_Art/Red_unPressed.png" id="4_xe1ul"]
+[ext_resource type="Texture2D" uid="uid://dmdpvbt3gyddk" path="res://Artwork/GUI_Art/Stop_Smoking_unpressed.png" id="5_2kwvt"]
+[ext_resource type="Texture2D" uid="uid://8j20b4tbhe2e" path="res://Artwork/GUI_Art/Stop_smoking_pressed.png" id="6_o8vuw"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -17,31 +22,65 @@ grow_vertical = 2
 scale = Vector2(2.555, 2.555)
 script = ExtResource("1_qsh5t")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 288.0
+offset_top = 119.0
+offset_right = 456.0
+offset_bottom = 267.0
+texture = ExtResource("2_wi5uj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 288.0
+offset_top = 119.0
+offset_right = 456.0
+offset_bottom = 142.0
+text = "Smoke Break."
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
 z_index = 1
+layout_mode = 2
+offset_left = 323.679
+offset_top = 226.614
+offset_right = 406.679
+offset_bottom = 271.615
+theme_override_fonts/font = ExtResource("3_w8oxj")
+text = "
+"
+icon = ExtResource("4_xe1ul")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label2" type="Label" parent="QuitButton"]
 layout_mode = 0
-offset_left = 287.671
-offset_top = 145.205
-offset_right = 357.671
-offset_bottom = 211.205
+offset_left = 9.78474
+offset_top = 9.78475
+offset_right = 72.7847
+offset_bottom = 28.7847
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w8oxj")
+theme_override_font_sizes/font_size = 7
+text = "F This!
+(Quit)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-z_index = 1
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
+offset_left = 331.507
+offset_top = 193.738
+offset_right = 459.507
+offset_bottom = 257.738
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_2kwvt")
+texture_pressed = ExtResource("6_o8vuw")
+texture_hover = ExtResource("5_2kwvt")
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Smoke Break?"
-
-[node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-text = "Resume"
-
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-text = "Quit"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

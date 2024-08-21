@@ -33,6 +33,7 @@ func _process(delta):
 		$smg_gun/Sprite2D.flip_v = true
 	else:
 		$smg_gun/Sprite2D.flip_v = false
+		
 # This function is called every physics frame (fixed timestep)
 func _physics_process(delta):
 	# Handle player movement based on input

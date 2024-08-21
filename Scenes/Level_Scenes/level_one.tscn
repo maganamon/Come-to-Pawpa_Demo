@@ -46,7 +46,7 @@ rotation = -1.56583
 shape = SubResource("SegmentShape2D_0oqpt")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_h5f7p")]
-offset_left = -199.0
-offset_top = -107.0
-offset_right = -199.0
-offset_bottom = -107.0
+offset_left = -297.0
+offset_top = -123.0
+offset_right = -297.0
+offset_bottom = -123.0
