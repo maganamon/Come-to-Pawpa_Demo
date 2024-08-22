@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var animation := $AnimatedSprite2D as AnimatedSprite2D
-var speed = 100  # Adjust the speed of the mob as needed
+var speed = 120  # Adjust the speed of the mob as needed
 var player
 var mob
  # Amount of damage the enemy will inflict on the player
 var damage_dealt = 10
-var health = 10
+var health = 12
 # Get the player's position
 func _ready():
 	#follow the player
@@ -32,12 +32,16 @@ func makepath() -> void:
 # Update the sprite direction based on the movement direction
 func _update_sprite_direction(direction):
 	if direction.x > 0:
-		if $AnimatedSprite2D.offset == Vector2(-6.5,0):
+		$left_head.disabled = true
+		$right_head.disabled = false
+		if $AnimatedSprite2D.offset == Vector2(-11,0):
 			$AnimatedSprite2D.offset = Vector2(0,0)
 		$AnimatedSprite2D.flip_h = false
 	elif direction.x < 0:
+		$left_head.disabled = false
+		$right_head.disabled = true
 		if $AnimatedSprite2D.offset == Vector2(0,0):
-			$AnimatedSprite2D.offset = Vector2(-6.5,0)
+			$AnimatedSprite2D.offset = Vector2(-11,0)
 		$AnimatedSprite2D.flip_h = true
 		
 func take_damage():
