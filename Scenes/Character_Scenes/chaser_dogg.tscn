@@ -147,18 +147,19 @@ frame = 5
 frame_progress = 0.0846106
 offset = Vector2(0, -17)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-3, 18)
-
-[node name="right_head" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(15.5, -26.5)
+[node name="right_head" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, -8.5)
 rotation = -2.71742
+scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_7nmay")
 
-[node name="left_head" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12.5, -27)
+[node name="left_head2" type="CollisionShape2D" parent="."]
+position = Vector2(-15.5, -9)
 rotation = -0.583064
 shape = SubResource("CapsuleShape2D_rgqq7")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3, 18)
 
 [node name="feet_collision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -15)
