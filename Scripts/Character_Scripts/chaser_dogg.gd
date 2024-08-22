@@ -32,16 +32,16 @@ func makepath() -> void:
 # Update the sprite direction based on the movement direction
 func _update_sprite_direction(direction):
 	if direction.x > 0:
-		$left_head.disabled = true
-		$right_head.disabled = false
-		if $AnimatedSprite2D.offset == Vector2(-11,0):
-			$AnimatedSprite2D.offset = Vector2(0,0)
+		$Area2D/left_head.disabled = true
+		$Area2D/right_head.disabled = false
+		if $AnimatedSprite2D.offset == Vector2(-11,-17):
+			$AnimatedSprite2D.offset = Vector2(0,-17)
 		$AnimatedSprite2D.flip_h = false
 	elif direction.x < 0:
-		$left_head.disabled = false
-		$right_head.disabled = true
-		if $AnimatedSprite2D.offset == Vector2(0,0):
-			$AnimatedSprite2D.offset = Vector2(-11,0)
+		$Area2D/left_head.disabled = false
+		$Area2D/right_head.disabled = true
+		if $AnimatedSprite2D.offset == Vector2(0,-17):
+			$AnimatedSprite2D.offset = Vector2(-11,-17)
 		$AnimatedSprite2D.flip_h = true
 		
 func take_damage():
