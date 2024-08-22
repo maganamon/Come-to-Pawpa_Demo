@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0nj11hsl2vxp"]
+
+[ext_resource type="Texture2D" uid="uid://cfxp2lunscvri" path="res://Artwork/Object_Art/elevator_tilesprite.png" id="1_smlrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vols"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(0, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8gc"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(400, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edaq6"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(200, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3kqd"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(0, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynsge"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(0, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbce8"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(200, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldgvv"]
+atlas = ExtResource("1_smlrl")
+region = Rect2(400, 0, 199, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gpl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vols")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edaq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3kqd")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynsge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbce8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldgvv")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
+[node name="Elevator_Door" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3gpl2")
+animation = &"closed"
+
+[node name="Spawn_Here" type="Marker2D" parent="."]
+position = Vector2(0, 160)

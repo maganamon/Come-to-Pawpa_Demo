@@ -204,7 +204,7 @@ animations = [{
 }]
 
 [node name="placeholder_player" type="CharacterBody2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_bwr26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -220,3 +220,7 @@ frame_progress = 0.884493
 
 [node name="smg_gun" parent="." instance=ExtResource("3_mxfyj")]
 position = Vector2(10.6667, 9)
+position = Vector2(3.66667, 8.66667)
+scale = Vector2(1.2, 1.2)
+
+[node name="Health_Timer" type="Timer" parent="."]

@@ -22,6 +22,7 @@ animations = [{
 radius = 547.526
 
 [node name="energy_ball" type="Area2D"]
+visibility_layer = 3
 position = Vector2(1, 1)
 scale = Vector2(0.01, 0.01)
 script = ExtResource("1_ia1pj")
@@ -35,3 +36,5 @@ frame_progress = 0.407226
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9.53674e-07, 0)
 shape = SubResource("CircleShape2D_38iwo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
