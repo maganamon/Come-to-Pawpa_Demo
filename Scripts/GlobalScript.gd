@@ -1,6 +1,5 @@
 extends Node
 
-var player_health
 var pause_menu_instance = null
 
 func _ready():

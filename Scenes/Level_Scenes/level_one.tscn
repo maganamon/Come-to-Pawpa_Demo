@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1pvyj3yrgp7y"]
+[gd_scene load_steps=15 format=3 uid="uid://d1pvyj3yrgp7y"]
 
 [ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_yjwv7"]
-[ext_resource type="PackedScene" uid="uid://0krbwqa5kgvh" path="res://Scenes/Character_Scenes/playholder_player.tscn" id="2_bdmrm"]
+[ext_resource type="PackedScene" uid="uid://0krbwqa5kgvh" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_bdmrm"]
 [ext_resource type="PackedScene" uid="uid://dwxys8yq0fgw1" path="res://Scenes/Menu_Scenes/pause_menu.tscn" id="3_h5f7p"]
-[ext_resource type="Script" path="res://Scenes/Level_Scenes/Doors_Level1.gd" id="4_smbxf"]
+[ext_resource type="Script" path="res://Scripts/Menu_Scripts/Doors_Level1.gd" id="4_smbxf"]
 [ext_resource type="PackedScene" uid="uid://c0nj11hsl2vxp" path="res://Scenes/Object Scenes/elevator_door.tscn" id="5_e2mt5"]
+[ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="7_six5k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -375,5 +376,12 @@ offset_left = -297.0
 offset_top = -123.0
 offset_right = -297.0
 offset_bottom = -123.0
+
+[node name="Player_HealthBar" parent="CanvasLayer" instance=ExtResource("7_six5k")]
+offset_left = 91.0
+offset_top = 44.0
+offset_right = 167.0
+offset_bottom = 84.0
+scale = Vector2(4, 4)
 
 [connection signal="timeout" from="Doors/spawn_timer" to="Doors" method="_on_spawn_timer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://wxogj22jqhf6"]
 
 [ext_resource type="Texture2D" uid="uid://bgiw0iohjxoii" path="res://Artwork/Backgrounds/CTPawpa_background2_final.png" id="1_2bpoa"]
-[ext_resource type="Script" path="res://Scripts/Button_Scripts_GUI/start_menu.gd" id="1_h6gt8"]
+[ext_resource type="Script" path="res://Scripts/Menu_Scripts/start_menu.gd" id="1_h6gt8"]
 [ext_resource type="Texture2D" uid="uid://duljuh66ppk74" path="res://Artwork/Backgrounds/Cat_tiled_background.png" id="1_qvluh"]
 [ext_resource type="Texture2D" uid="uid://c2fj21xq12lqp" path="res://Artwork/GUI_Art/Unpressed_Play.png" id="3_gkrbh"]
 [ext_resource type="Texture2D" uid="uid://21r37itjxqou" path="res://Artwork/GUI_Art/Pressed_Play.png" id="4_jjxkx"]
