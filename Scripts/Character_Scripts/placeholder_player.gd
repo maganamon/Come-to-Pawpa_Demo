@@ -32,7 +32,7 @@ func _process(delta):
 	# Calculate the angle between the player and the mouse.
 	var angle = (mouse_pos - player_pos).angle()
 	# Calculate the new position for the gun.
-	var gun_position = player_pos + Vector2(0,10) + Vector2(cos(angle), sin(angle)) * gun_distance
+	var gun_position = player_pos + Vector2(0,-10) + Vector2(cos(angle), sin(angle)) * gun_distance
 	# Set the gun's global position.
 	gun.global_position = gun_position
 	# Optionally, rotate the gun to face the mouse (if needed).

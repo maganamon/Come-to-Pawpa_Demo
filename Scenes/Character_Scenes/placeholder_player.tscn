@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://0krbwqa5kgvh"]
+[gd_scene load_steps=27 format=3 uid="uid://dgml0ky3lccsx"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/placeholder_player.gd" id="1_bwr26"]
 [ext_resource type="Texture2D" uid="uid://dcortfka5txig" path="res://Artwork/Character_Sprites/placeholder_player_tile.png" id="2_5ef58"]
@@ -208,18 +208,22 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_bwr26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, 11)
+position = Vector2(0.2, 0.6)
 rotation = 1.57296
 shape = SubResource("CapsuleShape2D_4ch7k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.8, -10.4)
 sprite_frames = SubResource("SpriteFrames_vjt88")
 animation = &"walk_right"
 frame_progress = 0.884493
 
 [node name="smg_gun" parent="." instance=ExtResource("3_mxfyj")]
+<<<<<<< Updated upstream
 position = Vector2(3.66667, 8.66667)
+=======
+position = Vector2(2.86667, -1.73333)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="Health_Timer" type="Timer" parent="."]

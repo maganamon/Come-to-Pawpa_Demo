@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccnoclhdf6klv"]
+[gd_scene load_steps=10 format=3 uid="uid://iehigtn72ck6"]
 
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_lu7em"]
-[ext_resource type="PackedScene" uid="uid://0krbwqa5kgvh" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="1_rhdl3"]
-[ext_resource type="PackedScene" uid="uid://buswbb6d07gws" path="res://Scenes/Character_Scenes/chaser_dogg.tscn" id="2_u2uod"]
+[ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="1_rhdl3"]
+[ext_resource type="PackedScene" uid="uid://bw5bo38i7sv8c" path="res://Scenes/Character_Scenes/chaser_dogg.tscn" id="2_u2uod"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y88ac"]
 vertices = PackedVector2Array(4, 4, -4, 4, -4, -4, 4, -4)
