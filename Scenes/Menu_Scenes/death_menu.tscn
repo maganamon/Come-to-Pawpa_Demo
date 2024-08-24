@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dufx8f2huudc6"]
+[gd_scene load_steps=8 format=3 uid="uid://dufx8f2huudc6"]
 
 [ext_resource type="Texture2D" uid="uid://co84wrwvbkm5w" path="res://Artwork/GUI_Art/Death_Message1.png" id="1_1tq4l"]
+[ext_resource type="Script" path="res://Scripts/Menu_Scripts/death_menu.gd" id="1_17a0m"]
 [ext_resource type="Texture2D" uid="uid://dsjogikakgrbt" path="res://Artwork/GUI_Art/8_bit_death_cat.png" id="1_qbv43"]
-[ext_resource type="Texture2D" uid="uid://ckke5l5isuv1b" path="res://Artwork/GUI_Art/restart_unpressed.png" id="2_xjc7g"]
-[ext_resource type="Texture2D" uid="uid://rpbflc2lih04" path="res://Artwork/GUI_Art/restart_pressed.png" id="3_j2pnd"]
+[ext_resource type="Texture2D" uid="uid://cct182pg0uocl" path="res://Artwork/GUI_Art/restart_unpressed.png" id="2_xjc7g"]
 [ext_resource type="Texture2D" uid="uid://4p7eu3p7ymm1" path="res://Artwork/GUI_Art/Unpressed_Exit.png" id="5_d8tfy"]
+[ext_resource type="Texture2D" uid="uid://r4euiud30svg" path="res://Artwork/GUI_Art/restart_pressed_2.png" id="6_6xs7d"]
 [ext_resource type="Texture2D" uid="uid://dum40auu6fea8" path="res://Artwork/GUI_Art/Pressed_Exit.png" id="6_vvbxq"]
 
 [node name="Death_Menu" type="Control"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_17a0m")
 
 [node name="angel_cat" type="Sprite2D" parent="."]
 position = Vector2(191, 174)
@@ -25,7 +27,18 @@ position = Vector2(265, 50)
 scale = Vector2(3.10339, 7.6587)
 texture = ExtResource("1_1tq4l")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Death_Menu-Exit_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 145.0
+offset_right = 329.0
+offset_bottom = 185.0
+scale = Vector2(2.24937, 0.989165)
+texture_normal = ExtResource("5_d8tfy")
+texture_pressed = ExtResource("6_vvbxq")
+stretch_mode = 0
+
+[node name="Death_Menu-Restart_Button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 295.0
 offset_top = 189.0
@@ -33,16 +46,8 @@ offset_right = 606.0
 offset_bottom = 322.0
 scale = Vector2(0.255583, 0.255583)
 texture_normal = ExtResource("2_xjc7g")
-texture_pressed = ExtResource("3_j2pnd")
+texture_pressed = ExtResource("6_6xs7d")
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 128.0
-offset_right = 330.0
-offset_bottom = 168.0
-scale = Vector2(2.23942, 1.14044)
-texture_normal = ExtResource("5_d8tfy")
-texture_pressed = ExtResource("6_vvbxq")
-stretch_mode = 0
+[connection signal="pressed" from="Death_Menu-Exit_Button" to="." method="_on_death_menu_exit_button_pressed"]
+[connection signal="pressed" from="Death_Menu-Restart_Button" to="." method="_on_death_menu_restart_button_pressed"]
