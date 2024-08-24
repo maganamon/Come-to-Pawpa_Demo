@@ -984,5 +984,11 @@ zoom = Vector2(0.5, 0.5)
 [node name="Chaser_Dogg" parent="." instance=ExtResource("2_u2uod")]
 position = Vector2(-5, 113)
 
+[node name="Chaser_Dogg2" parent="." instance=ExtResource("2_u2uod")]
+position = Vector2(-6, 205)
+
+[node name="Chaser_Dogg3" parent="." instance=ExtResource("2_u2uod")]
+position = Vector2(-12, 163)
+
 [node name="placeholder_player" parent="." instance=ExtResource("1_rhdl3")]
 position = Vector2(0, -203)

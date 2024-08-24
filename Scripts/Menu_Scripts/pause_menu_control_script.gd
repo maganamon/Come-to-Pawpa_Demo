@@ -5,8 +5,8 @@ var is_game_paused = false
 func _ready():
 	# Connect signals for buttons
 	hide()
-	var resume_button = $MarginContainer/VBoxContainer/ResumeButton
-	var quit_button = $MarginContainer/VBoxContainer/QuitButton
+	var resume_button = $ResumeButton
+	var quit_button = $QuitButton
 	
 	# Check if buttons are valid
 	if resume_button and quit_button:

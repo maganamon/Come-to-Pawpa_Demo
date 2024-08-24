@@ -70,7 +70,7 @@ text = "F This!
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="ResumeButton" type="TextureButton" parent="."]
 layout_mode = 2
 offset_left = 331.507
 offset_top = 193.738
@@ -83,4 +83,4 @@ texture_hover = ExtResource("5_2kwvt")
 stretch_mode = 5
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_texture_button_pressed"]

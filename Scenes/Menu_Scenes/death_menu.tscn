@@ -10,29 +10,26 @@
 
 [node name="Death_Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+scale = Vector2(1.7234, 1.7234)
 script = ExtResource("1_17a0m")
 
 [node name="angel_cat" type="Sprite2D" parent="."]
-position = Vector2(191, 174)
+position = Vector2(-69.6575, 18.1468)
 scale = Vector2(0.395869, 0.395869)
 texture = ExtResource("1_qbv43")
 
 [node name="you_are_dead" type="Sprite2D" parent="."]
-position = Vector2(265, 50)
+position = Vector2(4.34247, -105.853)
 scale = Vector2(3.10339, 7.6587)
 texture = ExtResource("1_1tq4l")
 
 [node name="Death_Menu-Exit_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 289.0
-offset_top = 145.0
-offset_right = 329.0
-offset_bottom = 185.0
+offset_left = 28.3425
+offset_top = -10.8532
+offset_right = 68.3425
+offset_bottom = 29.1468
 scale = Vector2(2.24937, 0.989165)
 texture_normal = ExtResource("5_d8tfy")
 texture_pressed = ExtResource("6_vvbxq")
@@ -40,10 +37,10 @@ stretch_mode = 0
 
 [node name="Death_Menu-Restart_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 295.0
-offset_top = 189.0
-offset_right = 606.0
-offset_bottom = 322.0
+offset_left = 34.3425
+offset_top = 33.1468
+offset_right = 345.342
+offset_bottom = 166.147
 scale = Vector2(0.255583, 0.255583)
 texture_normal = ExtResource("2_xjc7g")
 texture_pressed = ExtResource("6_6xs7d")

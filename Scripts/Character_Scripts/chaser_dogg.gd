@@ -63,6 +63,7 @@ func take_damage():
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("take_damage_mob"):
+		speed = 0
 		animation.play("dog_attack")
 		var push = global_position.direction_to(body.global_position)
 		body.take_damage_mob(damage_dealt, push)

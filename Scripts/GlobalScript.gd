@@ -1,6 +1,7 @@
 extends Node
 
 var pause_menu_instance = null
+signal player_died()
 
 func _ready():
 	# Preload the PauseMenu scene using the correct path
