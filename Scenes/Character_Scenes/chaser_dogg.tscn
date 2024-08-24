@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://buswbb6d07gws"]
+[gd_scene load_steps=22 format=3 uid="uid://bw5bo38i7sv8c"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/chaser_dogg.gd" id="1_u7a4c"]
 [ext_resource type="Texture2D" uid="uid://cnbd4cjru6b61" path="res://Artwork/Character_Sprites/Enemy_Sprites/Idle.png" id="2_76eun"]
@@ -121,53 +121,44 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nmay"]
-radius = 5.38003
-height = 23.0006
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgqq7"]
 radius = 5.0
 height = 21.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dy2y7"]
-radius = 6.0
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8iwvk"]
-b = Vector2(-7, 0.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nmay"]
+radius = 6.04151
+height = 23.0006
 
 [node name="Chaser_Dogg" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+collision_mask = 2
 script = ExtResource("1_u7a4c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.5, 0)
 sprite_frames = SubResource("SpriteFrames_gbgie")
-animation = &"run_right"
-frame = 5
-frame_progress = 0.0846106
+animation = &"Idle"
 offset = Vector2(0, -17)
-
-[node name="right_head" type="CollisionShape2D" parent="."]
-position = Vector2(12.5, -8.5)
-rotation = -2.71742
-scale = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_7nmay")
-
-[node name="left_head" type="CollisionShape2D" parent="."]
-position = Vector2(-15.5, -9)
-rotation = -0.583064
-shape = SubResource("CapsuleShape2D_rgqq7")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-3, 18)
+collision_priority = 0.0
 
-[node name="feet_collision" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -15)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_dy2y7")
+[node name="left_head" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.5, -27)
+rotation = -0.583064
+shape = SubResource("CapsuleShape2D_rgqq7")
+
+[node name="right_head" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15.5, -26.5)
+rotation = -2.71742
+shape = SubResource("CapsuleShape2D_7nmay")
+
+[node name="feet_collision" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(1.5, -14)
+polygon = PackedVector2Array(-18.5, -12.5, 15.5, -9.5, 18, 1.5, 12.5, 3.5, 6.5, 0, -2.5, -1.5, -9.5, -0.5, -14, 3, -21, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Nav_Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -176,10 +167,11 @@ autostart = true
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 1.5)
-rotation = 0.0815882
-shape = SubResource("SegmentShape2D_8iwvk")
+[node name="chasser-right_polygon-collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-19.5, 4.5, -3.5, 1, 13, 6, 18.5, -15.5, 12, -17, 6.5, -5, -16.5, -5)
+
+[node name="chasser-left_polygon-collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-22.5, -15, -18.5, -5, -16, 6, -3.5, 0, 9.5, 6, 9, -4, -9.5, -6, -16.5, -17.5)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

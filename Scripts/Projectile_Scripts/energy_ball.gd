@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 500
+var speed = 1600
 var direction = Vector2.ZERO
 var traveled_distance = 0
 var damage = 1

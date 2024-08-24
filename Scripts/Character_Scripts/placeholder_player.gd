@@ -32,7 +32,7 @@ func _process(delta):
 	# Calculate the angle between the player and the mouse.
 	var angle = (mouse_pos - player_pos).angle()
 	# Calculate the new position for the gun.
-	var gun_position = player_pos + Vector2(0,10) + Vector2(cos(angle), sin(angle)) * gun_distance
+	var gun_position = player_pos + Vector2(0,-10) + Vector2(cos(angle), sin(angle)) * gun_distance
 	# Set the gun's global position.
 	gun.global_position = gun_position
 	# Optionally, rotate the gun to face the mouse (if needed).
@@ -152,7 +152,7 @@ func take_damage_mob(dmg_amt, pushed):
 	# Have a 3 second healing cooldown after being hit ###
 	$Health_Timer.start(healing_pause)
 	## knock back logic here:
-	knockback = Vector2.ZERO + (pushed * 250)
+	knockback = Vector2.ZERO + (pushed * 300)
 	knockback_tween = get_tree().create_tween()
 	knockback_tween.parallel().tween_property(self, "knockback", Vector2.ZERO, knockback_decay)
 	## Knockback Logic END #####
@@ -162,5 +162,6 @@ func take_damage_mob(dmg_amt, pushed):
 	
 func die():
 	print("PLayer Died")
+	GlobalScript.player_died.emit()
 	queue_free()
 	

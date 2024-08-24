@@ -75,4 +75,4 @@ sprite_frames = SubResource("SpriteFrames_3gpl2")
 animation = &"closed"
 
 [node name="Spawn_Here" type="Marker2D" parent="."]
-position = Vector2(0, 160)
+position = Vector2(0, 175)
