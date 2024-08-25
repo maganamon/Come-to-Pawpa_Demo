@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/pause_menu_control_script.gd" id="1_qsh5t"]
 [ext_resource type="Texture2D" uid="uid://83jjl2l8ijh2" path="res://Artwork/Backgrounds/purple_smoking_cat.png" id="2_wi5uj"]
-[ext_resource type="FontFile" uid="uid://b1ffoo4aq01da" path="res://Artwork/GUI_Art/prstartk.ttf" id="3_w8oxj"]
-[ext_resource type="Texture2D" uid="uid://b6x6ugdlmajdm" path="res://Artwork/GUI_Art/Red_unPressed.png" id="4_xe1ul"]
-[ext_resource type="Texture2D" uid="uid://dmdpvbt3gyddk" path="res://Artwork/GUI_Art/Stop_Smoking_unpressed.png" id="5_2kwvt"]
-[ext_resource type="Texture2D" uid="uid://8j20b4tbhe2e" path="res://Artwork/GUI_Art/Stop_smoking_pressed.png" id="6_o8vuw"]
+[ext_resource type="FontFile" uid="uid://b1ffoo4aq01da" path="res://Artwork/GUI_Art/Fonts/prstartk.ttf" id="3_w8oxj"]
+[ext_resource type="Texture2D" uid="uid://b6x6ugdlmajdm" path="res://Artwork/GUI_Art/Buttons_Art/Red_unPressed.png" id="4_xe1ul"]
+[ext_resource type="Texture2D" uid="uid://dmdpvbt3gyddk" path="res://Artwork/GUI_Art/Buttons_Art/Stop_Smoking_unpressed.png" id="5_2kwvt"]
+[ext_resource type="Texture2D" uid="uid://8j20b4tbhe2e" path="res://Artwork/GUI_Art/Buttons_Art/Stop_smoking_pressed.png" id="6_o8vuw"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3

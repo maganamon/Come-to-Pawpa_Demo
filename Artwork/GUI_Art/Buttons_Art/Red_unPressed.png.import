@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmdpvbt3gyddk"
-path="res://.godot/imported/Stop_Smoking_unpressed.png-5779e3dcd6559d03145fcc9d6ca6a5bc.ctex"
+uid="uid://b6x6ugdlmajdm"
+path="res://.godot/imported/Red_unPressed.png-e8bf5d7611fd5920a1a01c78558536f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/GUI_Art/Stop_Smoking_unpressed.png"
-dest_files=["res://.godot/imported/Stop_Smoking_unpressed.png-5779e3dcd6559d03145fcc9d6ca6a5bc.ctex"]
+source_file="res://Artwork/GUI_Art/Buttons_Art/Red_unPressed.png"
+dest_files=["res://.godot/imported/Red_unPressed.png-e8bf5d7611fd5920a1a01c78558536f2.ctex"]
 
 [params]
 

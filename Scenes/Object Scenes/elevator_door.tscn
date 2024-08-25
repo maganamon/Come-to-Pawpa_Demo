@@ -76,3 +76,11 @@ animation = &"closed"
 
 [node name="Spawn_Here" type="Marker2D" parent="."]
 position = Vector2(0, 175)
+
+[node name="Elevator-Referance_Rect" type="ReferenceRect" parent="."]
+offset_left = -126.0
+offset_top = 132.0
+offset_right = -86.0
+offset_bottom = 172.0
+scale = Vector2(6.69195, 3.17194)
+border_color = Color(0, 0.609241, 0.110363, 1)

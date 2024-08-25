@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bgiw0iohjxoii" path="res://Artwork/Backgrounds/CTPawpa_background2_final.png" id="1_2bpoa"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/start_menu.gd" id="1_h6gt8"]
 [ext_resource type="Texture2D" uid="uid://duljuh66ppk74" path="res://Artwork/Backgrounds/Cat_tiled_background.png" id="1_qvluh"]
-[ext_resource type="Texture2D" uid="uid://c2fj21xq12lqp" path="res://Artwork/GUI_Art/Unpressed_Play.png" id="3_gkrbh"]
-[ext_resource type="Texture2D" uid="uid://21r37itjxqou" path="res://Artwork/GUI_Art/Pressed_Play.png" id="4_jjxkx"]
-[ext_resource type="Texture2D" uid="uid://4p7eu3p7ymm1" path="res://Artwork/GUI_Art/Unpressed_Exit.png" id="5_kcy2e"]
-[ext_resource type="Texture2D" uid="uid://dum40auu6fea8" path="res://Artwork/GUI_Art/Pressed_Exit.png" id="6_i6733"]
+[ext_resource type="Texture2D" uid="uid://c2fj21xq12lqp" path="res://Artwork/GUI_Art/Buttons_Art/Unpressed_Play.png" id="3_gkrbh"]
+[ext_resource type="Texture2D" uid="uid://21r37itjxqou" path="res://Artwork/GUI_Art/Buttons_Art/Pressed_Play.png" id="4_jjxkx"]
+[ext_resource type="Texture2D" uid="uid://4p7eu3p7ymm1" path="res://Artwork/GUI_Art/Buttons_Art/Unpressed_Exit.png" id="5_kcy2e"]
+[ext_resource type="Texture2D" uid="uid://dum40auu6fea8" path="res://Artwork/GUI_Art/Buttons_Art/Pressed_Exit.png" id="6_i6733"]
 
 [node name="Start_Menu" type="Control"]
 layout_mode = 3

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b1ffoo4aq01da"
-path="res://.godot/imported/prstartk.ttf-31f20e37d26cd213835beee17eeaf2eb.fontdata"
+uid="uid://dw6b114a4whvm"
+path="res://.godot/imported/Pixel.ttf-1d47242f3b637344d667db09d43f4fdb.fontdata"
 
 [deps]
 
-source_file="res://Artwork/GUI_Art/prstartk.ttf"
-dest_files=["res://.godot/imported/prstartk.ttf-31f20e37d26cd213835beee17eeaf2eb.fontdata"]
+source_file="res://Artwork/GUI_Art/Fonts/Pixel.ttf"
+dest_files=["res://.godot/imported/Pixel.ttf-1d47242f3b637344d667db09d43f4fdb.fontdata"]
 
 [params]
 

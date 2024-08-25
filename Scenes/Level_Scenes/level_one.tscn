@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1pvyj3yrgp7y"]
+[gd_scene load_steps=20 format=3 uid="uid://d1pvyj3yrgp7y"]
 
 [ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_yjwv7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0nj11hsl2vxp" path="res://Scenes/Object Scenes/elevator_door.tscn" id="5_e2mt5"]
 [ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="7_six5k"]
 [ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/death_menu.tscn" id="8_3tcae"]
+[ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="9_1t3bm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -375,7 +376,21 @@ rotation = 1.5708
 position = Vector2(128, 418)
 rotation = -1.5708
 
+[node name="bottomLeft_elevator" parent="Doors" instance=ExtResource("5_e2mt5")]
+position = Vector2(381, 686)
+rotation = 3.14159
+
+[node name="bottomRight_elevator" parent="Doors" instance=ExtResource("5_e2mt5")]
+position = Vector2(840, 686)
+rotation = -3.14159
+
 [node name="spawn_timer" type="Timer" parent="Doors"]
+wait_time = 2.0
+autostart = true
+
+[node name="LevelOne-round_timer" type="Timer" parent="Doors"]
+wait_time = 120.0
+one_shot = true
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -402,5 +417,9 @@ offset_left = 580.0
 offset_top = 364.0
 offset_right = 580.0
 offset_bottom = 364.0
+
+[node name="Time_Left-2D_Sprite" parent="CanvasLayer" instance=ExtResource("9_1t3bm")]
+position = Vector2(832, 107)
+scale = Vector2(0.611776, 0.611776)
 
 [connection signal="timeout" from="Doors/spawn_timer" to="Doors" method="_on_spawn_timer_timeout"]
