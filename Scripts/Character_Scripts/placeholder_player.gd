@@ -16,7 +16,7 @@ var health = health_max
 ## Heath Variables END ##################
 # The radius of the circle around the player where the gun will follow.
 @onready var gun : = $smg_gun
-var gun_distance = 50.0
+var gun_distance = 10.0
 #
 
 
@@ -167,3 +167,5 @@ func die():
 	GlobalScript.player_died.emit()
 	queue_free()
 	
+func _on_level_music_ready() -> void:
+	pass # Replace with function body.

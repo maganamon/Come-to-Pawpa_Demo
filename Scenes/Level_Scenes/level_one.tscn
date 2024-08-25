@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1pvyj3yrgp7y"]
+[gd_scene load_steps=21 format=3 uid="uid://d1pvyj3yrgp7y"]
 
 [ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_yjwv7"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="7_six5k"]
 [ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/death_menu.tscn" id="8_3tcae"]
 [ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="9_1t3bm"]
+[ext_resource type="AudioStream" uid="uid://bnyjb3kuyp4ss" path="res://Audio/Music/Come to PawPa - Alley.mp3" id="10_i0gma"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -422,4 +423,9 @@ offset_bottom = 364.0
 position = Vector2(832, 107)
 scale = Vector2(0.611776, 0.611776)
 
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_i0gma")
+autoplay = true
+
 [connection signal="timeout" from="Doors/spawn_timer" to="Doors" method="_on_spawn_timer_timeout"]
+[connection signal="ready" from="LevelMusic" to="placeholder_player" method="_on_level_music_ready"]
