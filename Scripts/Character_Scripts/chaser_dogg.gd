@@ -58,7 +58,6 @@ func take_damage():
 	health -= 1
 	if health == 0:
 		GlobalScript.kill_counter += 1
-		print(GlobalScript.kill_counter)
 		queue_free()
 
 
