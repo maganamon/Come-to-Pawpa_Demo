@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1pvyj3yrgp7y"]
+[gd_scene load_steps=19 format=3 uid="uid://d1pvyj3yrgp7y"]
 
 [ext_resource type="Texture2D" uid="uid://cp7s5q10jbm7y" path="res://Artwork/Backgrounds/Elevator_Background_Placeholder.png" id="1_cvgrw"]
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_yjwv7"]
@@ -300,9 +300,17 @@ texture = ExtResource("1_yjwv7")
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_l65v3")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0oqpt"]
-a = Vector2(4.81998, 969.988)
-b = Vector2(0.12915, 25.9997)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m2th"]
+size = Vector2(24.146, 98.7774)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op1vu"]
+size = Vector2(41.4, 185.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6gi3"]
+size = Vector2(21.264, 70.2421)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62oot"]
+size = Vector2(183.281, 1500.65)
 
 [node name="Game" type="Node2D"]
 
@@ -329,24 +337,29 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(602, 347)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 3
 
 [node name="left_wall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(162, 15)
-shape = SubResource("SegmentShape2D_0oqpt")
+position = Vector2(69, 245)
+rotation = 1.5708
+scale = Vector2(53.1265, 1.81216)
+shape = SubResource("RectangleShape2D_4m2th")
 
 [node name="right_wall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1070, 23)
-shape = SubResource("SegmentShape2D_0oqpt")
+position = Vector2(1157, 420)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_op1vu")
 
 [node name="top_wall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(110, 141)
-rotation = -1.56583
-shape = SubResource("SegmentShape2D_0oqpt")
+position = Vector2(672, 43)
+rotation = -0.00217766
+scale = Vector2(72.8515, 2.63517)
+shape = SubResource("RectangleShape2D_l6gi3")
 
 [node name="bottom_wall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(108, 647)
-rotation = -1.56583
-shape = SubResource("SegmentShape2D_0oqpt")
+position = Vector2(669, 743)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_62oot")
 
 [node name="Doors" type="Node2D" parent="."]
 script = ExtResource("4_smbxf")
@@ -355,7 +368,7 @@ script = ExtResource("4_smbxf")
 position = Vector2(611, 104)
 
 [node name="right_elevator" parent="Doors" instance=ExtResource("5_e2mt5")]
-position = Vector2(1114, 394)
+position = Vector2(1089, 401)
 rotation = 1.5708
 
 [node name="left_elevator" parent="Doors" instance=ExtResource("5_e2mt5")]

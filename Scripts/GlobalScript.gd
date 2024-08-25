@@ -1,6 +1,7 @@
 extends Node
 
 var pause_menu_instance = null
+var kill_counter = 0
 signal player_died()
 
 func _ready():

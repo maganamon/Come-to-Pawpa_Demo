@@ -57,7 +57,8 @@ func _update_sprite_direction(direction):
 func take_damage():
 	health -= 1
 	if health == 0:
-		### NOT YET #### GlobalScript.kill_counter += 1
+		GlobalScript.kill_counter += 1
+		print(GlobalScript.kill_counter)
 		queue_free()
 
 

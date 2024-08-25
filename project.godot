@@ -30,6 +30,10 @@ window/stretch/scale=2.0
 
 project/assembly_name="Come to Pawpa Demo"
 
+[global_group]
+
+Enemies="Bad_Dogs_Here"
+
 [input]
 
 new_up={

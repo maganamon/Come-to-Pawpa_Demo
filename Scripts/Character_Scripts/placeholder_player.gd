@@ -161,7 +161,9 @@ func take_damage_mob(dmg_amt, pushed):
 	knockback_tween.parallel().tween_property($AnimatedSprite2D, "modulate", Color(1,1,1,1), knockback_decay)
 	
 func die():
+	print(GlobalScript.kill_counter)
 	print("PLayer Died")
+	GlobalScript.kill_counter = 0
 	GlobalScript.player_died.emit()
 	queue_free()
 	
