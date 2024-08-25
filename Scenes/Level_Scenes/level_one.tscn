@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dwxys8yq0fgw1" path="res://Scenes/Menu_Scenes/pause_menu.tscn" id="3_h5f7p"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/Doors_Level1.gd" id="4_smbxf"]
 [ext_resource type="PackedScene" uid="uid://c0nj11hsl2vxp" path="res://Scenes/Object Scenes/elevator_door.tscn" id="5_e2mt5"]
-[ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="7_six5k"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="7_six5k"]
 [ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/death_menu.tscn" id="8_3tcae"]
-[ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="9_1t3bm"]
-[ext_resource type="AudioStream" uid="uid://bnyjb3kuyp4ss" path="res://Audio/Music/Come to PawPa - Alley.mp3" id="10_i0gma"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="9_1t3bm"]
+[ext_resource type="AudioStream" uid="uid://bipf7r46gxp50" path="res://Audio/Music/Come to PawPa - Time is Running Out.mp3" id="10_nfigk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -424,8 +424,10 @@ position = Vector2(832, 107)
 scale = Vector2(0.611776, 0.611776)
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_i0gma")
+stream = ExtResource("10_nfigk")
+volume_db = -1.874
 autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Doors/spawn_timer" to="Doors" method="_on_spawn_timer_timeout"]
 [connection signal="ready" from="LevelMusic" to="placeholder_player" method="_on_level_music_ready"]
