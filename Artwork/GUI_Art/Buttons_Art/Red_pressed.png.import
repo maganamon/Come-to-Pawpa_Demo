@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cct182pg0uocl"
-path="res://.godot/imported/restart_unpressed.png-7e94d0997dcb1578821fafe5a02d7574.ctex"
+uid="uid://s50q6i80rwk3"
+path="res://.godot/imported/Red_pressed.png-15cf9b63e01172773e66480b8e8b3b27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/GUI_Art/restart_unpressed.png"
-dest_files=["res://.godot/imported/restart_unpressed.png-7e94d0997dcb1578821fafe5a02d7574.ctex"]
+source_file="res://Artwork/GUI_Art/Buttons_Art/Red_pressed.png"
+dest_files=["res://.godot/imported/Red_pressed.png-15cf9b63e01172773e66480b8e8b3b27.ctex"]
 
 [params]
 
