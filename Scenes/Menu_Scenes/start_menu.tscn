@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wxogj22jqhf6"]
+[gd_scene load_steps=9 format=3 uid="uid://wxogj22jqhf6"]
 
 [ext_resource type="Texture2D" uid="uid://bgiw0iohjxoii" path="res://Artwork/Backgrounds/CTPawpa_background2_final.png" id="1_2bpoa"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/start_menu.gd" id="1_h6gt8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://21r37itjxqou" path="res://Artwork/GUI_Art/Buttons_Art/Pressed_Play.png" id="4_jjxkx"]
 [ext_resource type="Texture2D" uid="uid://4p7eu3p7ymm1" path="res://Artwork/GUI_Art/Buttons_Art/Unpressed_Exit.png" id="5_kcy2e"]
 [ext_resource type="Texture2D" uid="uid://dum40auu6fea8" path="res://Artwork/GUI_Art/Buttons_Art/Pressed_Exit.png" id="6_i6733"]
+[ext_resource type="AudioStream" uid="uid://bnyjb3kuyp4ss" path="res://Audio/Music/Come to PawPa - Alley.mp3" id="8_2ddqe"]
 
 [node name="Start_Menu" type="Control"]
 layout_mode = 3
@@ -71,6 +72,12 @@ texture_hover = ExtResource("5_kcy2e")
 stretch_mode = 0
 
 [node name="menu_timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2ddqe")
+volume_db = -0.937
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Exit_Button" to="." method="_on_exit_button_pressed"]
