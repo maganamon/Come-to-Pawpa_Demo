@@ -10,16 +10,15 @@ var damage_dealt = 10
 var health = 1
 # Get the player's position
 func _ready():
-	#follow the player
 	# Assuming Player is the root node of the player character
 	player = get_node("/root/Game/placeholder_player")
-	animation.play("dog_attack") 
+	#animation.play("dog_attack") 
 
 func _process(_delta):
 	if player != null:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * speed
-		if velocity > Vector2(0,0):
+		if velocity != Vector2(0,0):
 			animation.play("run_right")
 		move_and_slide()
 		_update_sprite_direction(direction)
@@ -55,19 +54,19 @@ func _update_sprite_direction(direction):
 		$AnimatedSprite2D.flip_h = true
 		
 func take_damage():
+	GlobalScript.enemy_hit.emit()
 	health -= 1
 	if health == 0:
 		GlobalScript.kill_counter += 1
 		queue_free()
 
-
 func _on_area_2d_body_entered(body):
 	if body.has_method("take_damage_mob"):
+		GlobalScript.enemy_hit.emit()
 		speed = 0
 		animation.play("dog_attack")
 		var push = global_position.direction_to(body.global_position)
 		body.take_damage_mob(damage_dealt, push)
-
 
 func _on_nav_timer_timeout():
 	makepath()
@@ -85,3 +84,4 @@ func _on_attack_timer_timeout():
 	$Nav_Timer.paused = false
 	speed = 500
 	animation.play("run_right")
+	

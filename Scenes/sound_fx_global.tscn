@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmqa5d8qqjkdr"]
+
+[ext_resource type="Script" path="res://Scripts/sound_fx_global.gd" id="1_15k60"]
+[ext_resource type="AudioStream" uid="uid://dcx4tvrp2rhfc" path="res://Audio/Sound Effects/Enemy_hitmarkerSound.wav" id="2_ijgrv"]
+[ext_resource type="AudioStream" uid="uid://dy7oqa324sieb" path="res://Audio/Sound Effects/Bullet-Hit-1.wav" id="3_nj6mo"]
+
+[node name="SoundFX_Global" type="Node2D"]
+script = ExtResource("1_15k60")
+
+[node name="Enemies_hitmarker" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ijgrv")
+
+[node name="Bullet_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nj6mo")
+volume_db = -7.661
