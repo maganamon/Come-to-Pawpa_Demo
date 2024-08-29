@@ -55,18 +55,16 @@ func _update_sprite_direction(direction):
 		$AnimatedSprite2D.flip_h = true
 		
 func take_damage():
-	play_hitmarker_sound()
 	health -= 1
 	if health == 0:
 		GlobalScript.kill_counter += 1
 		queue_free()
-		play_hitmarker_sound()
-	
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("take_damage_mob"):
 		speed = 0
 		animation.play("dog_attack")
+		play_hitmarker_sound()
 		var push = global_position.direction_to(body.global_position)
 		body.take_damage_mob(damage_dealt, push)
 
