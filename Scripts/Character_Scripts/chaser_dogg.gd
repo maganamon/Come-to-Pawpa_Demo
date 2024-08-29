@@ -7,7 +7,7 @@ var player
 var mob
  # Amount of damage the enemy will inflict on the player
 var damage_dealt = 10
-var health = 5
+var health = 1
 # Get the player's position
 func _ready():
 	# Assuming Player is the root node of the player character
