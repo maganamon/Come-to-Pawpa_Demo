@@ -4,6 +4,8 @@ var pause_menu_instance = null
 var kill_counter = 0
 var LevelOne_Time = 120.0
 signal player_died()
+signal enemy_hit()
+signal shot_fired()
 
 func _ready():
 	# Preload the PauseMenu scene using the correct path

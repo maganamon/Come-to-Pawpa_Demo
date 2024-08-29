@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct2grvpwymu1b"]
+[gd_scene load_steps=4 format=3 uid="uid://ct2grvpwymu1b"]
 
 [ext_resource type="Texture2D" uid="uid://duwjb76auw3ni" path="res://Artwork/Projectile_Sprites/Pixel_smg.png" id="1_amo5r"]
 [ext_resource type="Script" path="res://Scripts/Projectile_Scripts/smg_gun.gd" id="1_k7vhn"]
-[ext_resource type="AudioStream" uid="uid://dy7oqa324sieb" path="res://Audio/Sound Effects/Bullet-Hit-1.wav" id="3_ikeki"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_otoqo"]
 b = Vector2(1, 0)
@@ -22,9 +21,5 @@ texture = ExtResource("1_amo5r")
 position = Vector2(13, -2)
 
 [node name="FireRate_Cooldown" type="Timer" parent="."]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ikeki")
-volume_db = -0.405
 
 [connection signal="timeout" from="FireRate_Cooldown" to="." method="_on_fire_rate_cooldown_timeout"]
