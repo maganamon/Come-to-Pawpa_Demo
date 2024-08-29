@@ -12,13 +12,13 @@ var health = 1
 func _ready():
 	# Assuming Player is the root node of the player character
 	player = get_node("/root/Game/placeholder_player")
-	animation.play("dog_attack") 
+	#animation.play("dog_attack") 
 
 func _process(_delta):
 	if player != null:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * speed
-		if velocity > Vector2(0,0):
+		if velocity != Vector2(0,0):
 			animation.play("run_right")
 		move_and_slide()
 		_update_sprite_direction(direction)
