@@ -22,10 +22,11 @@ func _physics_process(delta):
 	if traveled_distance > MAX_DISTANCE:
 		queue_free()
 		
-
 #Logic to free the bullet
 ###NOT USING THIS YET!!!
 func _on_body_entered(body):
 	queue_free()
 	if body.has_method("take_damage"):
 		body.take_damage()
+	
+	

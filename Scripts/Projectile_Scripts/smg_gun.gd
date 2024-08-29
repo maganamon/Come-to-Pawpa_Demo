@@ -14,12 +14,15 @@ func shoot():
 		#### NOT DOING THIS YET!!health -= 0.1
 		const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 		var new_bullet = BULLET.instantiate()
+		play_hitmarker_sound()
 		new_bullet.global_position = $gun_marker.global_position #marker's global pos
 		get_tree().root.add_child(new_bullet)
 
 		can_shoot = false
 		$FireRate_Cooldown.start(cooldown_time)
 		
-
 func _on_fire_rate_cooldown_timeout():
 	can_shoot = true
+	
+func play_hitmarker_sound():
+	$AudioStreamPlayer2D.play()
