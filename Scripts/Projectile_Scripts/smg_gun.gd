@@ -2,21 +2,18 @@ extends Area2D
 
 var can_shoot = true
 var cooldown_time = 0.15
-func _none():
-	pass
+const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
+
 func _ready():
-	GlobalScript.shot_fired.connect(_none)
-	
+	pass
 func _process(_delta):
-	var pos = global_position  # Get the global position of the player
 	if can_shoot && Input.is_action_pressed("shoot"):
 			# Start shooting
 			shoot()
 
 func shoot():
 	#Create a Bullet on Marker
-		#### NOT DOING THIS YET!!health -= 0.1
-		const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
+		#### NOT DOING THIS YET!!health -= 1
 		var new_bullet = BULLET.instantiate()
 		GlobalScript.shot_fired.emit()
 		new_bullet.global_position = $gun_marker.global_position #marker's global pos

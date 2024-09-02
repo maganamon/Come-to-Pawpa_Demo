@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd1dqjfwohlpi"]
+
+[ext_resource type="Texture2D" uid="uid://dqh2bk1pux1ey" path="res://Artwork/Projectile_Sprites/ProjEnemy_Bullet.png" id="1_nc2h3"]
+[ext_resource type="Script" path="res://Scripts/Projectile_Scripts/proj_enemy_bullet.gd" id="1_rv6s3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqaru"]
+radius = 1.0
+height = 6.0
+
+[node name="ProjEnemy_Bullet" type="Area2D"]
+script = ExtResource("1_rv6s3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 7.62939e-06)
+scale = Vector2(0.273622, 0.180894)
+texture = ExtResource("1_nc2h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57088
+shape = SubResource("CapsuleShape2D_xqaru")

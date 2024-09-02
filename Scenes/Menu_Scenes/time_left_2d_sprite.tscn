@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lm7cmpghfw1r"]
 
 [ext_resource type="Texture2D" uid="uid://b7mp0cwhummjc" path="res://Artwork/GUI_Art/Time_Left_gui.png" id="1_trfni"]
-[ext_resource type="Script" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.gd" id="2_n54td"]
+[ext_resource type="Script" path="res://Scripts/GUI_Scripts/time_left_2d_sprite.gd" id="2_n54td"]
 [ext_resource type="FontFile" uid="uid://dw6b114a4whvm" path="res://Artwork/GUI_Art/Fonts/Pixel.ttf" id="2_tct7s"]
 
 [node name="Time_Left-2D_Sprite" type="Sprite2D"]

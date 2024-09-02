@@ -3,19 +3,16 @@ extends CharacterBody2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var animation := $AnimatedSprite2D as AnimatedSprite2D
 var speed = 400  # Adjust the speed of the mob as needed
-var player
 var mob
  # Amount of damage the enemy will inflict on the player
 var damage_dealt = 10
 var health = 1
 # Get the player's position
 func _ready():
-	# Assuming Player is the root node of the player character
-	player = get_node("/root/Game/placeholder_player")
-	#animation.play("dog_attack") 
+	pass
 
 func _process(_delta):
-	if player != null:
+	if GlobalScript.PLAYER_GPS != null:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * speed
 		if velocity != Vector2(0,0):
@@ -26,8 +23,8 @@ func _process(_delta):
 		
 		
 func makepath() -> void:
-	if player != null:
-		nav_agent.target_position = player.global_position
+	if GlobalScript.PLAYER_GPS != null:
+		nav_agent.target_position = GlobalScript.PLAYER_GPS
 
 		
 # Update the sprite direction based on the movement direction
@@ -57,12 +54,12 @@ func take_damage():
 	GlobalScript.enemy_hit.emit()
 	health -= 1
 	if health == 0:
+		GlobalScript.hurtDog.emit()
 		GlobalScript.kill_counter += 1
 		queue_free()
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("take_damage_mob"):
-		GlobalScript.enemy_hit.emit()
 		speed = 0
 		animation.play("dog_attack")
 		var push = global_position.direction_to(body.global_position)

@@ -21,10 +21,13 @@ var gun_distance = 10.0
 
 
 func _ready():
+	GlobalScript.PLAYER_GPS = self.global_position
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
 
 func _process(delta):
+	GlobalScript.PLAYER_HP = health
+	GlobalScript.PLAYER_GPS = self.global_position
 	##Gun Moving in Circle Mechanics
 	# Get the global position of the player and the mouse.
 	var player_pos = global_position
@@ -143,11 +146,13 @@ func playAnimation(movement):
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Function to take damage
 func take_damage_mob(dmg_amt, pushed):
+	GlobalScript.player_hit.emit()
 	can_heal = false
 	health -= dmg_amt # Reduce current health by damage amount
 	health_max -= dmg_amt
 	if health <= 0:
 		health = 0
+		GlobalScript.PLAYER_HP = 0
 		die()  # Call the die function if health reaches 0
 	# Have a 3 second healing cooldown after being hit ###
 	$Health_Timer.start(healing_pause)
