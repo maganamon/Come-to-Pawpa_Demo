@@ -4,7 +4,7 @@ extends CharacterBody2D
 const PROJ_BULLET = preload("res://Scenes/Projectile_Scenes/proj_enemy_bullet.tscn")
 const SPEED = 0.0
 const BULLETS_ALLOWED = 8
-var facingDirection = "left"
+var facingDirection = ""
 var releventMarker
 var bulletSpawn_offset = Vector2(0,10)
 var can_shoot = false
@@ -15,17 +15,21 @@ var health = 2
 
 func _ready():
 	releventMarker = $LeftMarker
-	$ProjEnemy_Timer.start(longWait)
+	$ProjEnemy_Timer.start(2.0)
 	
-func _process(delta):
-	if (GlobalScript.PLAYER_GPS.x < self.global_position.x) && (facingDirection != "left"):
-		_update_directionStuff("right")
-	elif (GlobalScript.PLAYER_GPS.x > self.global_position.x) && (facingDirection != "right"):
+func _process(_delta):
+	if (GlobalScript.PLAYER_GPS.x < global_position.x) && (facingDirection != "left"):
 		_update_directionStuff("left")
+	elif (GlobalScript.PLAYER_GPS.x > global_position.x) && (facingDirection != "right"):
+		_update_directionStuff("right")
 	if can_shoot == true:
 		_shoot()
+		
+	
+
 func _update_directionStuff(faceThisWay):
 	if faceThisWay == "left":
+		$Sprite2D.flip_h = false
 		$LeftForProjectiles_Collision.disabled = false
 		$RightForProjectile_Collision.disabled = true
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = false
@@ -33,6 +37,7 @@ func _update_directionStuff(faceThisWay):
 		facingDirection = "left"
 		releventMarker = $LeftMarker
 	else :
+		$Sprite2D.flip_h = true
 		$LeftForProjectiles_Collision.disabled = true
 		$RightForProjectile_Collision.disabled = false
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = true
