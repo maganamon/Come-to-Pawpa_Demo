@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlah013c042if"]
+[gd_scene load_steps=4 format=3 uid="uid://c5fmgqx4ker7p"]
 
-[ext_resource type="PackedScene" uid="uid://v0v03he00o6k" path="res://Scenes/Character_Scenes/projectile_dogg.tscn" id="1_6lhqs"]
+[ext_resource type="PackedScene" uid="uid://bdypirr4s6bxc" path="res://Scenes/Character_Scenes/projectile_dogg.tscn" id="1_6lhqs"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_mm4no"]
-[ext_resource type="PackedScene" uid="uid://bmqa5d8qqjkdr" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="3_u2bum"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="3_u2bum"]
 
 [node name="TEST_forProjDogg" type="Node2D"]
 

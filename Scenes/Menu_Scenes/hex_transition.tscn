@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://do43ngj7vvdmn"]
+[gd_scene load_steps=18 format=3 uid="uid://bfsqqgiijo8mq"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
+[ext_resource type="Texture2D" uid="uid://da3ew7mst81hj" path="res://Artwork/Hex_Card_Art/Rabies_Card.png" id="3_31w8u"]
+[ext_resource type="Texture2D" uid="uid://cw7uu0bda21t" path="res://Artwork/Hex_Card_Art/Healing_Hounds.png" id="4_2plv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7hum"]
 atlas = ExtResource("1_76lir")
@@ -96,16 +98,42 @@ animations = [{
 }]
 
 [node name="Hex_Transition" type="Node2D"]
+position = Vector2(450, -60)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Elevator_Going_Up" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_402vj")
 animation = &"RepeatMe"
 autoplay = "RepeatMe"
 frame_progress = 0.440873
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Character" type="Sprite2D" parent="."]
 position = Vector2(-4, 5)
 scale = Vector2(2.52778, 2.52778)
 texture = ExtResource("2_epcqp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Rabies_Card" type="Sprite2D" parent="."]
+position = Vector2(-72.625, -6)
+scale = Vector2(0.178767, 0.161983)
+texture = ExtResource("3_31w8u")
+
+[node name="Healing_Hounds_Card" type="Sprite2D" parent="."]
+position = Vector2(66, -5.21875)
+scale = Vector2(0.181164, 0.172624)
+texture = ExtResource("4_2plv6")
+
+[node name="hex_transition-rabie_infested_mutts_button" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -96.0
+offset_top = 16.0
+offset_right = -56.0
+offset_bottom = 32.0
+stretch_mode = 4
+
+[node name="hex_transition-healing_hounds_button" type="TextureButton" parent="."]
+offset_left = 44.0
+offset_top = 16.0
+offset_right = 84.0
+offset_bottom = 26.0
+stretch_mode = 4
