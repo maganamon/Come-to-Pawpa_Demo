@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bfsqqgiijo8mq"]
+[gd_scene load_steps=18 format=3 uid="uid://do43ngj7vvdmn"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
@@ -99,28 +99,33 @@ animations = [{
 
 [node name="Hex_Transition" type="Node2D"]
 position = Vector2(450, -60)
+scale = Vector2(2, 2)
 
 [node name="Elevator_Going_Up" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.75, 4.50003)
+scale = Vector2(4.46346, 4.85385)
 sprite_frames = SubResource("SpriteFrames_402vj")
 animation = &"RepeatMe"
 autoplay = "RepeatMe"
 frame_progress = 0.440873
 
 [node name="Character" type="Sprite2D" parent="."]
-position = Vector2(-4, 5)
-scale = Vector2(2.52778, 2.52778)
+position = Vector2(-26, -1)
+scale = Vector2(10.0972, 9.375)
 texture = ExtResource("2_epcqp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
 
 [node name="Rabies_Card" type="Sprite2D" parent="."]
-position = Vector2(-72.625, -6)
-scale = Vector2(0.178767, 0.161983)
+texture_repeat = 1
+position = Vector2(-313, 13)
+scale = Vector2(1, 0.905)
 texture = ExtResource("3_31w8u")
 
 [node name="Healing_Hounds_Card" type="Sprite2D" parent="."]
-position = Vector2(66, -5.21875)
-scale = Vector2(0.181164, 0.172624)
+position = Vector2(332, 27)
+scale = Vector2(1, 0.956)
 texture = ExtResource("4_2plv6")
 
 [node name="hex_transition-rabie_infested_mutts_button" type="TextureButton" parent="."]
