@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmqa5d8qqjkdr"]
+[gd_scene load_steps=7 format=3 uid="uid://dmbsmxsqguxp5"]
 
 [ext_resource type="Script" path="res://Scripts/sound_fx_global.gd" id="1_15k60"]
 [ext_resource type="AudioStream" uid="uid://dcx4tvrp2rhfc" path="res://Audio/Sound Effects/Enemy_hitmarkerSound.wav" id="2_ijgrv"]

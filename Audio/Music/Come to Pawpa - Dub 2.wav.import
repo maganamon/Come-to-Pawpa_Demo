@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7kqlpdya1gwi"
+path="res://.godot/imported/Come to Pawpa - Dub 2.wav-efb0be845bc57b8e90b93952b46f2658.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Come to Pawpa - Dub 2.wav"
+dest_files=["res://.godot/imported/Come to Pawpa - Dub 2.wav-efb0be845bc57b8e90b93952b46f2658.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

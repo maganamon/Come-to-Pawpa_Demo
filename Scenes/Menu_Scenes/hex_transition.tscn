@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://do43ngj7vvdmn"]
+[gd_scene load_steps=17 format=3 uid="uid://do43ngj7vvdmn"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
+[ext_resource type="AudioStream" uid="uid://byylgb3idgn7s" path="res://Audio/Music/Come to PawPa - The Pad.wav" id="3_gmkpb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_raprw"]
 atlas = ExtResource("1_76lir")
@@ -114,3 +115,7 @@ frame_progress = 0.895728
 position = Vector2(608, 329)
 scale = Vector2(9.42399, 9.42399)
 texture = ExtResource("2_epcqp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gmkpb")
+autoplay = true
