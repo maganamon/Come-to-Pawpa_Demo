@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5fmgqx4ker7p"]
+[gd_scene load_steps=4 format=3 uid="uid://5npc2k4l4npm"]
 
-[ext_resource type="PackedScene" uid="uid://bdypirr4s6bxc" path="res://Scenes/Character_Scenes/projectile_dogg.tscn" id="1_6lhqs"]
+[ext_resource type="PackedScene" uid="uid://864tbarl5i6k" path="res://Scenes/Character_Scenes/projectile_dogg.tscn" id="1_6lhqs"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_mm4no"]
 [ext_resource type="PackedScene" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="3_u2bum"]
 
