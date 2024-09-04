@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da3ew7mst81hj"
-path="res://.godot/imported/Rabies_Card.png-e30eace3085ac7e79f8de62f62f42d03.ctex"
+uid="uid://c3ur7pqvnct2j"
+path="res://.godot/imported/Roided_Mutts.png-7467a4b2f4ae9752c34077bd53d1d89c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/Hex_Card_Art/Rabies_Card.png"
-dest_files=["res://.godot/imported/Rabies_Card.png-e30eace3085ac7e79f8de62f62f42d03.ctex"]
+source_file="res://Artwork/Hex_Card_Art/Roided_Mutts.png"
+dest_files=["res://.godot/imported/Roided_Mutts.png-7467a4b2f4ae9752c34077bd53d1d89c.ctex"]
 
 [params]
 

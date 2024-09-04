@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/hex_transition.gd" id="1_wtb7q"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
-[ext_resource type="Texture2D" uid="uid://da3ew7mst81hj" path="res://Artwork/Hex_Card_Art/Rabies_Card.png" id="3_31w8u"]
-[ext_resource type="Texture2D" uid="uid://cw7uu0bda21t" path="res://Artwork/Hex_Card_Art/Healing_Hounds.png" id="4_2plv6"]
+[ext_resource type="Texture2D" uid="uid://d26op7f7l5e8p" path="res://Artwork/Hex_Card_Art/Rabid_Hounds.png" id="4_qt52f"]
+[ext_resource type="Texture2D" uid="uid://c3ur7pqvnct2j" path="res://Artwork/Hex_Card_Art/Roided_Mutts.png" id="5_34jxb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7hum"]
 atlas = ExtResource("1_76lir")
@@ -121,28 +121,28 @@ zoom = Vector2(0.25, 0.25)
 
 [node name="Rabies_Card" type="Sprite2D" parent="."]
 texture_repeat = 1
-position = Vector2(-313, 13)
-scale = Vector2(1, 0.905)
-texture = ExtResource("3_31w8u")
+position = Vector2(-388, -97.0063)
+scale = Vector2(0.851613, 0.771692)
+texture = ExtResource("4_qt52f")
 
-[node name="Healing_Hounds_Card" type="Sprite2D" parent="."]
-position = Vector2(332, 27)
-scale = Vector2(1, 0.956)
-texture = ExtResource("4_2plv6")
+[node name="Roided_Mutts_Card" type="Sprite2D" parent="."]
+position = Vector2(373.5, -91.912)
+scale = Vector2(0.841424, 0.801171)
+texture = ExtResource("5_34jxb")
 
-[node name="hex_transition-healing_hounds_button2" type="Button" parent="."]
-offset_left = 186.0
-offset_top = -226.0
-offset_right = 452.0
-offset_bottom = 215.0
+[node name="hex_transition-roided_mutts_button2" type="Button" parent="."]
+offset_left = 260.0
+offset_top = -282.912
+offset_right = 494.0
+offset_bottom = 87.088
 flat = true
 
-[node name="hex_transition-rabie_infested_mutts_button2" type="Button" parent="."]
-offset_left = -462.0
-offset_top = -222.0
-offset_right = -195.0
-offset_bottom = 194.0
+[node name="hex_transition-rabid_hounds_button2" type="Button" parent="."]
+offset_left = -505.0
+offset_top = -276.006
+offset_right = -268.0
+offset_bottom = 80.9937
 flat = true
 
-[connection signal="pressed" from="hex_transition-healing_hounds_button2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="hex_transition-rabie_infested_mutts_button2" to="." method="_on_hex_transitionrabie_infested_mutts_button_2_pressed"]
+[connection signal="pressed" from="hex_transition-roided_mutts_button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="hex_transition-rabid_hounds_button2" to="." method="_on_hex_transitionrabie_infested_mutts_button_2_pressed"]

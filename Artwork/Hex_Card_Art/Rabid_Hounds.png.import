@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw7uu0bda21t"
-path="res://.godot/imported/Healing_Hounds.png-a2824411840a6196b3c257cb1cc696de.ctex"
+uid="uid://d26op7f7l5e8p"
+path="res://.godot/imported/Rabid_Hounds.png-4a4b6d40da637f41000f757db48497fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/Hex_Card_Art/Healing_Hounds.png"
-dest_files=["res://.godot/imported/Healing_Hounds.png-a2824411840a6196b3c257cb1cc696de.ctex"]
+source_file="res://Artwork/Hex_Card_Art/Rabid_Hounds.png"
+dest_files=["res://.godot/imported/Rabid_Hounds.png-4a4b6d40da637f41000f757db48497fc.ctex"]
 
 [params]
 
