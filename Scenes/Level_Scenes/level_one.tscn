@@ -663,6 +663,8 @@ position = Vector2(567, 339)
 scale = Vector2(5.5857, 5.5857)
 sprite_frames = SubResource("SpriteFrames_uf3bk")
 animation = &"Intro"
+frame = 31
+frame_progress = 1.0
 script = ExtResource("11_h3ycg")
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
