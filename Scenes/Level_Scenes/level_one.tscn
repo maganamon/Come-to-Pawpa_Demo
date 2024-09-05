@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/death_menu.tscn" id="8_3tcae"]
 [ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="9_1t3bm"]
 [ext_resource type="Texture2D" uid="uid://8wupfjojkuw3" path="res://Artwork/GUI_Art/Don't_dDie_animationSheet.png" id="10_kskfp"]
-[ext_resource type="AudioStream" uid="uid://bipf7r46gxp50" path="res://Audio/Music/Come to PawPa - Time is Running Out.mp3" id="10_nfigk"]
 [ext_resource type="Script" path="res://Scripts/GUI_Scripts/into_dontDie.gd" id="11_h3ycg"]
 [ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="11_k7gpq"]
+[ext_resource type="AudioStream" uid="uid://bkvpvkcq2y2av" path="res://Audio/Music/Come to PawPa - Time is Running Out (2 minute version).wav" id="12_nb0vq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -668,10 +668,9 @@ frame_progress = 1.0
 script = ExtResource("11_h3ycg")
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_nfigk")
-volume_db = -12.0
+stream = ExtResource("12_nb0vq")
+volume_db = -9.0
 autoplay = true
-parameters/looping = true
 
 [node name="SoundFX_Global" parent="." instance=ExtResource("11_k7gpq")]
 
