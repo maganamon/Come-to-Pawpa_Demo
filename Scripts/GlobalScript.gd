@@ -13,6 +13,7 @@ signal shot_fired()
 signal player_hit()
 signal projEnemy_shot()
 signal hurtDog()
+signal globalFade2Blk()
 ## Sound Signals END ##
 
 func _ready():
