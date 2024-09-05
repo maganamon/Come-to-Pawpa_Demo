@@ -11,6 +11,7 @@ var round_timer
 func _ready():
 	GlobalScript.player_died.connect(_on_player_died)
 	concurrent_doors = 1
+	print(GlobalScript.dogHealth)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
