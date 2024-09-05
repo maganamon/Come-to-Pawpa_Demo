@@ -6,15 +6,22 @@ var can_spawn = true
 var rand_int
 var spwnAmt
 var concurrent_doors
+var timeToSet
 var round_timer
+var enemiesLeft
+var ENDROUND = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timeToSet = GlobalScript._giveMe_LevelTime()
+	round_timer = $DoorsTimer
+	round_timer.start(timeToSet)
 	GlobalScript.player_died.connect(_on_player_died)
 	concurrent_doors = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if ENDROUND == true:
+		enemiesLeft = get_tree().get_nodes_in_group("Enemies").size()
 
 ## Randomly spawn based on a random number generator
 ## 1 = top_Elevator, 2 = right_elevator, 3 = left_elevator
@@ -37,11 +44,13 @@ func _on_spawn_timer_timeout():
 					spawn_enemy($"bottomLeft_elevator/Elevator-Referance_Rect", $bottomLeft_elevator, spwnAmt)
 				elif rand_int == 5:
 					spawn_enemy($"bottomRight_elevator/Elevator-Referance_Rect", $bottomRight_elevator, spwnAmt)
-		if ($"LevelOne-round_timer".time_left <= 0.0):
+		if (round_timer.time_left <= 0.0):
 			can_spawn = false
-		elif ($"LevelOne-round_timer".time_left <= 85.0):
+		#after 35 seconds
+		elif (round_timer.time_left <= timeToSet - 35.0):
 			concurrent_doors = 3
-		elif ($"LevelOne-round_timer".time_left <= 105.0):
+		#after 15 seconds
+		elif (round_timer.time_left <= timeToSet - 15):
 			concurrent_doors = 2
 
 func spawn_enemy(spawn_area, elevator, how_many):
@@ -63,3 +72,18 @@ func spawn_enemy(spawn_area, elevator, how_many):
 func _on_player_died():
 	can_spawn = false
 		
+
+
+func _on_doors_timer_timeout() -> void:
+	can_spawn = false
+	if ENDROUND == false:
+		ENDROUND = true
+		print(enemiesLeft)
+		$DoorsTimer.start(4.0)
+	if ENDROUND == true && enemiesLeft == 0:
+		GlobalScript.currentLevel += 1
+		GlobalScript.startTransition.emit()
+		await GlobalScript.endTransition
+		get_tree().change_scene_to_file("res://Scenes/Menu_Scenes/hex_transition.tscn")
+	else:
+		$DoorsTimer.start(4.0)

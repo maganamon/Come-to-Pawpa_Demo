@@ -5,6 +5,7 @@
 
 [node name="Projectile_Dogg" type="CharacterBody2D"]
 texture_filter = 1
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_335rj")
 
@@ -12,21 +13,22 @@ script = ExtResource("1_335rj")
 texture = ExtResource("1_fx1o2")
 
 [node name="LeftForProjectiles_Collision" type="CollisionPolygon2D" parent="."]
-scale = Vector2(1.09783, 1.09783)
 polygon = PackedVector2Array(-20, -3, -24, -8, -24, -18, -21, -24, -21, -31, -11, -36, -8, -32, 4, -32, 3, -35, 15, -34, 15, -23, 18, -17, 18, -7, 21, -2, 22, 17, 16, 26, -18, 25, -21, 12, -22, 2)
 
 [node name="RightForProjectile_Collision" type="CollisionPolygon2D" parent="."]
-position = Vector2(4.76837e-07, 1)
-scale = Vector2(1.08424, 1.08424)
 polygon = PackedVector2Array(-17, 24, 14, 24, 20, 17, 18, 5, 16, -3, 22, -5, 24, -9, 24, -18, 21, -23, 21, -31, 13, -36, 9, -36, 8, -33, -2, -33, -6, -36, -15, -34, -15, -26, -17, -18, -17, -14, -21, -7, -22, -3, -22, 13, -22, 19)
 disabled = true
 
 [node name="Area2D_ProjEnemy" type="Area2D" parent="."]
 
 [node name="Left_ForBody_Collision" type="CollisionPolygon2D" parent="Area2D_ProjEnemy"]
+position = Vector2(2, 0)
+scale = Vector2(1.16166, 1.14882)
 polygon = PackedVector2Array(-20, -3, -24, -8, -24, -18, -21, -24, -21, -31, -11, -36, -8, -32, 4, -32, 3, -35, 15, -34, 15, -23, 18, -17, 18, -7, 21, -2, 22, 17, 16, 26, -18, 25, -21, 12, -22, 2)
 
 [node name="Right_ForBody_Collision" type="CollisionPolygon2D" parent="Area2D_ProjEnemy"]
+position = Vector2(2.38419e-07, 2)
+scale = Vector2(1.15239, 1.14102)
 polygon = PackedVector2Array(-17, 24, 14, 24, 20, 17, 18, 5, 16, -3, 22, -5, 24, -9, 24, -18, 21, -23, 21, -31, 13, -36, 9, -36, 8, -33, -2, -33, -6, -36, -15, -34, -15, -26, -17, -18, -17, -14, -21, -7, -22, -3, -22, 13, -22, 19)
 disabled = true
 
@@ -38,4 +40,5 @@ position = Vector2(35, 18)
 
 [node name="ProjEnemy_Timer" type="Timer" parent="."]
 
+[connection signal="body_entered" from="Area2D_ProjEnemy" to="." method="_on_area_2d_proj_enemy_body_entered"]
 [connection signal="timeout" from="ProjEnemy_Timer" to="." method="_on_proj_enemy_timer_timeout"]
