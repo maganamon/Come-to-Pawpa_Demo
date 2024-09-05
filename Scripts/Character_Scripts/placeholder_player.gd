@@ -22,6 +22,7 @@ var gun_distance = 10.0
 
 func _ready():
 	GlobalScript.PLAYER_GPS = self.global_position
+	GlobalScript.shot_fired.connect(_loseHP)
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
 
@@ -48,7 +49,7 @@ func _process(delta):
 	
 	## Healing Rate ####
 	if (health < health_max) && can_heal:
-		health += 1
+		health += 3
 	## Healing Rate END ####
 # This function is called every physics frame (fixed timestep)
 func _physics_process(delta):
@@ -58,6 +59,11 @@ func _physics_process(delta):
 		velocity += knockback
 		move_and_slide()
 		
+func _loseHP():
+	can_heal = false
+	health += -2
+	$Health_Timer.start(1.5)
+
 # Function to handle player movement input and apply velocity
 func player_movement(_delta):
 	if Input.is_action_pressed("new_up") && Input.is_action_pressed("new_right"):
@@ -174,3 +180,7 @@ func die():
 	
 func _on_level_music_ready() -> void:
 	pass # Replace with function body.
+
+
+func _on_health_timer_timeout():
+	can_heal = true
