@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0ab2ugmnr6x3"
-path="res://.godot/imported/Rabid_Hounds_Decription.png-e34d3b6fd00782728b8c687e0668c58b.ctex"
+path="res://.godot/imported/Rabid_Hounds_Description.png-6581c2d7e10f81525dd10510999dd374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/Hex_Card_Art/Rabid_Hounds_Decription.png"
-dest_files=["res://.godot/imported/Rabid_Hounds_Decription.png-e34d3b6fd00782728b8c687e0668c58b.ctex"]
+source_file="res://Artwork/Hex_Card_Art/Rabid_Hounds_Description.png"
+dest_files=["res://.godot/imported/Rabid_Hounds_Description.png-6581c2d7e10f81525dd10510999dd374.ctex"]
 
 [params]
 

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
 [ext_resource type="Texture2D" uid="uid://d26op7f7l5e8p" path="res://Artwork/Hex_Card_Art/Rabid_Hounds.png" id="4_qt52f"]
 [ext_resource type="Texture2D" uid="uid://c3ur7pqvnct2j" path="res://Artwork/Hex_Card_Art/Roided_Mutts.png" id="5_34jxb"]
-[ext_resource type="Texture2D" uid="uid://d0ab2ugmnr6x3" path="res://Artwork/Hex_Card_Art/Rabid_Hounds_Decription.png" id="6_8ccbh"]
+[ext_resource type="Texture2D" uid="uid://d0ab2ugmnr6x3" path="res://Artwork/Hex_Card_Art/Rabid_Hounds_Description.png" id="6_8ccbh"]
 [ext_resource type="Texture2D" uid="uid://rsea6ydensqc" path="res://Artwork/Hex_Card_Art/Roided_Mutts_Description (2).png" id="7_l6bnc"]
 [ext_resource type="Texture2D" uid="uid://du20f0mvn2kf7" path="res://Artwork/Hex_Card_Art/Choose_Hex.png" id="8_6uemi"]
 
@@ -147,12 +147,12 @@ offset_right = -232.0
 offset_bottom = 217.994
 flat = true
 
-[node name="RabidHoundsDecription" type="Sprite2D" parent="."]
+[node name="Rabid_Hounds_Description" type="Sprite2D" parent="."]
 position = Vector2(-325.5, -222)
 scale = Vector2(1.56746, 1.68293)
 texture = ExtResource("6_8ccbh")
 
-[node name="RoidedMuttsDescription(2)" type="Sprite2D" parent="."]
+[node name="Roided_Mutts_Description" type="Sprite2D" parent="."]
 position = Vector2(333, -228.5)
 scale = Vector2(1.56349, 1.67073)
 texture = ExtResource("7_l6bnc")
