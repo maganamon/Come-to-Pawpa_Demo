@@ -1,54 +1,59 @@
-[gd_scene load_steps=17 format=3 uid="uid://do43ngj7vvdmn"]
+[gd_scene load_steps=22 format=3 uid="uid://dmfrhhoxnqldt"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
+[ext_resource type="Script" path="res://Scripts/Menu_Scripts/hex_transition.gd" id="1_wtb7q"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
-[ext_resource type="AudioStream" uid="uid://byylgb3idgn7s" path="res://Audio/Music/Come to PawPa - The Pad.wav" id="3_gmkpb"]
+[ext_resource type="Texture2D" uid="uid://d26op7f7l5e8p" path="res://Artwork/Hex_Card_Art/Rabid_Hounds.png" id="4_qt52f"]
+[ext_resource type="Texture2D" uid="uid://c3ur7pqvnct2j" path="res://Artwork/Hex_Card_Art/Roided_Mutts.png" id="5_34jxb"]
+[ext_resource type="Texture2D" uid="uid://d0ab2ugmnr6x3" path="res://Artwork/Hex_Card_Art/Rabid_Hounds_Description.png" id="6_8ccbh"]
+[ext_resource type="Texture2D" uid="uid://rsea6ydensqc" path="res://Artwork/Hex_Card_Art/Roided_Mutts_Description (2).png" id="7_l6bnc"]
+[ext_resource type="Texture2D" uid="uid://du20f0mvn2kf7" path="res://Artwork/Hex_Card_Art/Choose_Hex.png" id="8_6uemi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_raprw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7hum"]
 atlas = ExtResource("1_76lir")
 region = Rect2(0, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ruagi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6q8"]
 atlas = ExtResource("1_76lir")
 region = Rect2(260, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gaf7v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_md4bb"]
 atlas = ExtResource("1_76lir")
 region = Rect2(520, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_obf4q"]
-atlas = ExtResource("1_76lir")
-region = Rect2(2080, 0, 260, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yms8g"]
-atlas = ExtResource("1_76lir")
-region = Rect2(1820, 0, 260, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw7xf"]
-atlas = ExtResource("1_76lir")
-region = Rect2(1560, 0, 260, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dh4k0"]
-atlas = ExtResource("1_76lir")
-region = Rect2(1300, 0, 260, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1pj3m"]
-atlas = ExtResource("1_76lir")
-region = Rect2(1040, 0, 260, 130)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_imoxs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eouur"]
 atlas = ExtResource("1_76lir")
 region = Rect2(780, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ncyum"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qu2s"]
+atlas = ExtResource("1_76lir")
+region = Rect2(1040, 0, 260, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0bli"]
+atlas = ExtResource("1_76lir")
+region = Rect2(1300, 0, 260, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcsql"]
+atlas = ExtResource("1_76lir")
+region = Rect2(1560, 0, 260, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6p47"]
+atlas = ExtResource("1_76lir")
+region = Rect2(1820, 0, 260, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enmby"]
+atlas = ExtResource("1_76lir")
+region = Rect2(2080, 0, 260, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3d6w"]
 atlas = ExtResource("1_76lir")
 region = Rect2(2340, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_npvlb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xajwt"]
 atlas = ExtResource("1_76lir")
 region = Rect2(2600, 0, 260, 130)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8rkw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_anb7o"]
 atlas = ExtResource("1_76lir")
 region = Rect2(2860, 0, 260, 130)
 
@@ -56,40 +61,40 @@ region = Rect2(2860, 0, 260, 130)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_raprw")
+"texture": SubResource("AtlasTexture_k7hum")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ruagi")
+"texture": SubResource("AtlasTexture_2i6q8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gaf7v")
+"texture": SubResource("AtlasTexture_md4bb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_obf4q")
+"texture": SubResource("AtlasTexture_eouur")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yms8g")
+"texture": SubResource("AtlasTexture_4qu2s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xw7xf")
+"texture": SubResource("AtlasTexture_h0bli")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dh4k0")
+"texture": SubResource("AtlasTexture_jcsql")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1pj3m")
+"texture": SubResource("AtlasTexture_j6p47")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_imoxs")
+"texture": SubResource("AtlasTexture_enmby")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ncyum")
+"texture": SubResource("AtlasTexture_l3d6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_npvlb")
+"texture": SubResource("AtlasTexture_xajwt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m8rkw")
+"texture": SubResource("AtlasTexture_anb7o")
 }],
 "loop": true,
 "name": &"RepeatMe",
@@ -97,25 +102,65 @@ animations = [{
 }]
 
 [node name="Hex_Transition" type="Node2D"]
+position = Vector2(450, -60)
+scale = Vector2(2, 2)
+script = ExtResource("1_wtb7q")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(617, 354)
-scale = Vector2(0.939732, 0.939732)
-zoom = Vector2(0.5, 0.5)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(611, 324)
-scale = Vector2(4.09725, 4.09725)
+[node name="Elevator_Going_Up" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.75, 4.50003)
+scale = Vector2(4.46346, 4.85385)
 sprite_frames = SubResource("SpriteFrames_402vj")
 animation = &"RepeatMe"
 autoplay = "RepeatMe"
-frame_progress = 0.895728
+frame_progress = 0.440873
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(608, 329)
-scale = Vector2(9.42399, 9.42399)
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(-26, -1)
+scale = Vector2(10.0972, 9.375)
 texture = ExtResource("2_epcqp")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gmkpb")
-autoplay = true
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+
+[node name="Rabies_Card" type="Sprite2D" parent="."]
+texture_repeat = 1
+position = Vector2(-352, 39.9937)
+scale = Vector2(0.851613, 0.771692)
+texture = ExtResource("4_qt52f")
+
+[node name="Roided_Mutts_Card" type="Sprite2D" parent="."]
+position = Vector2(337.5, 39.0881)
+scale = Vector2(0.841424, 0.801171)
+texture = ExtResource("5_34jxb")
+
+[node name="hex_transition-roided_mutts_button2" type="Button" parent="."]
+offset_left = 224.0
+offset_top = -151.912
+offset_right = 458.0
+offset_bottom = 218.088
+flat = true
+
+[node name="hex_transition-rabid_hounds_button2" type="Button" parent="."]
+offset_left = -469.0
+offset_top = -139.006
+offset_right = -232.0
+offset_bottom = 217.994
+flat = true
+
+[node name="Rabid_Hounds_Description" type="Sprite2D" parent="."]
+position = Vector2(-325.5, -222)
+scale = Vector2(1.56746, 1.68293)
+texture = ExtResource("6_8ccbh")
+
+[node name="Roided_Mutts_Description" type="Sprite2D" parent="."]
+position = Vector2(333, -228.5)
+scale = Vector2(1.56349, 1.67073)
+texture = ExtResource("7_l6bnc")
+
+[node name="ChooseHex" type="Sprite2D" parent="."]
+position = Vector2(-8.49999, 200.5)
+scale = Vector2(1.86341, 3.73913)
+texture = ExtResource("8_6uemi")
+
+[connection signal="pressed" from="hex_transition-roided_mutts_button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="hex_transition-rabid_hounds_button2" to="." method="_on_hex_transitionrabie_infested_mutts_button_2_pressed"]
