@@ -1,26 +1,18 @@
 extends CanvasLayer
 
-signal on_transition_finished
 
 @onready var colorRect = $Control/ColorRect
 @onready var animationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalScript.globalFade2Blk.connect(fadeToBlack)
 	colorRect.visible = false
-	animationPlayer.animation_finished.connect(_on_anim_finished)
 
-	
-func _on_anim_finished(animName):
-	if animName == "fade_in":
-		on_transition_finished.emit()
-		animationPlayer.play("fade_out")
-	elif 1 == 1:
-		colorRect.visible = true
-		
-#func
-	
-
+func fadeToBlack():
+	animationPlayer.play("fade_in")
 
 func _on_animation_player_animation_finished(anim_name):
-	pass # Replace with function body.
+	if anim_name == "fade_in":
+		animationPlayer.play("fade_out")
+		colorRect.visible = false
