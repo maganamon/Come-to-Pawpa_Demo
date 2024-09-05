@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://chgtuk8edvc0o"]
+[gd_scene load_steps=22 format=3 uid="uid://dmfrhhoxnqldt"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/hex_transition.gd" id="1_wtb7q"]
