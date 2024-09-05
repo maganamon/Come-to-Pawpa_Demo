@@ -25,13 +25,11 @@ func _input(event):
 
 func pause_game():
 	show() #show menu
-	print("game is paused")
 	is_game_paused = true
 	get_tree().paused = true  # Pause the game
 
 func unpause_game():
 	hide() #hide menu
-	print("game is unpaused")
 	is_game_paused = false
 	get_tree().paused = false  # Unpause the game
 

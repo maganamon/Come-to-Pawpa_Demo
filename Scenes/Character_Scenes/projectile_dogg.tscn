@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://864tbarl5i6k"]
+[gd_scene load_steps=3 format=3 uid="uid://v0v03he00o6k"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/projectile_dogg.gd" id="1_335rj"]
 [ext_resource type="Texture2D" uid="uid://4rmaeegvkbrb" path="res://Artwork/Character_Sprites/Enemy_Sprites/miniGun_Dog.png" id="1_fx1o2"]
