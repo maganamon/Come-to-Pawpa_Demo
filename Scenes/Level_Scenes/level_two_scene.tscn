@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_mgudr"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_ghml2"]
-[ext_resource type="PackedScene" uid="uid://dwxys8yq0fgw1" path="res://Scenes/Menu_Scenes/pause_menu.tscn" id="3_in58d"]
-[ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/player_health_bar.tscn" id="4_plxxq"]
-[ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/death_menu.tscn" id="5_soagf"]
-[ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/time_left_2d_sprite.tscn" id="6_0d36c"]
+[ext_resource type="PackedScene" uid="uid://dwxys8yq0fgw1" path="res://Scenes/Menu_Scenes/GUI_Bits/pause_menu.tscn" id="3_in58d"]
+[ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/GUI_Bits/player_health_bar.tscn" id="4_plxxq"]
+[ext_resource type="PackedScene" uid="uid://dufx8f2huudc6" path="res://Scenes/Menu_Scenes/GUI_Bits/death_menu.tscn" id="5_soagf"]
+[ext_resource type="PackedScene" uid="uid://lm7cmpghfw1r" path="res://Scenes/Menu_Scenes/GUI_Bits/time_left_2d_sprite.tscn" id="6_0d36c"]
 [ext_resource type="Texture2D" uid="uid://8wupfjojkuw3" path="res://Artwork/GUI_Art/Don't_dDie_animationSheet.png" id="7_tdub4"]
 [ext_resource type="Script" path="res://Scripts/GUI_Scripts/into_dontDie.gd" id="8_o6lee"]
 

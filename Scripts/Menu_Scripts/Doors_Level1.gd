@@ -78,10 +78,12 @@ func _on_doors_timer_timeout() -> void:
 	can_spawn = false
 	if ENDROUND == false:
 		ENDROUND = true
-		print (enemiesLeft)
+		print(enemiesLeft)
 		$DoorsTimer.start(4.0)
 	if ENDROUND == true && enemiesLeft == 0:
 		GlobalScript.currentLevel += 1
+		GlobalScript.startTransition.emit()
+		await GlobalScript.endTransition
 		get_tree().change_scene_to_file("res://Scenes/Menu_Scenes/hex_transition.tscn")
 	else:
 		$DoorsTimer.start(4.0)
