@@ -7,6 +7,7 @@ var LevelOne_Time = 120.0
 var LevelTwo_Time = 140.0
 var PLAYER_GPS = null
 var PLAYER_HP = 100
+var dogHealth = 1
 
 ## Sound Signals ##
 signal player_died()
