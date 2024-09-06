@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
 [ext_resource type="AudioStream" uid="uid://byylgb3idgn7s" path="res://Audio/Music/Come to PawPa - The Pad.wav" id="3_gmkpb"]
 [ext_resource type="Texture2D" uid="uid://d4nax2q6bbd73" path="res://Artwork/Hex_Art/Choose_Card.png" id="4_ygiuu"]
-[ext_resource type="Texture2D" uid="uid://dv6atcgrjcxbx" path="res://Artwork/Hex_Art/Pussy_Hex_Card.png" id="5_77s4m"]
+[ext_resource type="Texture2D" uid="uid://c0dbqjavtusd5" path="res://Artwork/Hex_Art/Pussy_Hex_Card.png" id="5_77s4m"]
 [ext_resource type="Texture2D" uid="uid://v2bwmc7sbwde" path="res://Artwork/Hex_Art/Rabid_Hounds_Card.png" id="6_q5lh0"]
 [ext_resource type="Texture2D" uid="uid://dsook7kjimovv" path="res://Artwork/Hex_Art/Roided_Mutts_Card.png" id="7_atra3"]
 [ext_resource type="Texture2D" uid="uid://cgg3m55lm1crh" path="res://Artwork/Hex_Art/Rabid_Hounds_Description.png" id="8_36kvb"]
@@ -135,7 +135,7 @@ texture = ExtResource("4_ygiuu")
 
 [node name="PussyHexCard" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.666667)
-position = Vector2(603.4, 242.2)
+position = Vector2(595.6, 212.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_77s4m")
 
@@ -176,10 +176,10 @@ offset_bottom = 519.0
 flat = true
 
 [node name="Hex_Transition-Pussy_Card" type="Button" parent="."]
-offset_left = 497.0
-offset_top = 56.0
-offset_right = 714.0
-offset_bottom = 429.0
+offset_left = 489.2
+offset_top = 26.6
+offset_right = 706.2
+offset_bottom = 399.6
 flat = true
 
 [connection signal="pressed" from="Hex_Transition-Roided_Mutts_Button" to="." method="_on_hex_transition_roided_mutts_button_pressed"]
