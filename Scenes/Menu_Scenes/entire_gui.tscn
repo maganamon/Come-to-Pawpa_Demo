@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://brtpfk81qih5"]
+[gd_scene load_steps=42 format=3 uid="uid://brtpfk81qih5"]
 
 [ext_resource type="PackedScene" uid="uid://dwxys8yq0fgw1" path="res://Scenes/Menu_Scenes/GUI_Bits/pause_menu.tscn" id="1_fhv2q"]
 [ext_resource type="PackedScene" uid="uid://ctxvi47idcdyu" path="res://Scenes/Menu_Scenes/GUI_Bits/player_health_bar.tscn" id="2_2pmwe"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8wupfjojkuw3" path="res://Artwork/GUI_Art/Don't_dDie_animationSheet.png" id="5_pn1ot"]
 [ext_resource type="Script" path="res://Scripts/GUI_Scripts/into_dontDie.gd" id="6_2unxd"]
 [ext_resource type="PackedScene" uid="uid://cgoieutkqpevb" path="res://Scenes/Menu_Scenes/GUI_Bits/fade_black_transition.tscn" id="7_sjg6x"]
+[ext_resource type="PackedScene" uid="uid://dal87grgl1mri" path="res://Scenes/Menu_Scenes/GUI_Bits/over_heating_node.tscn" id="8_3isbt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnlqt"]
 atlas = ExtResource("5_pn1ot")
@@ -275,5 +276,9 @@ animation = &"Intro"
 script = ExtResource("6_2unxd")
 
 [node name="FadeBlack_Transition" parent="." instance=ExtResource("7_sjg6x")]
+
+[node name="OverHeating_Node" parent="." instance=ExtResource("8_3isbt")]
+position = Vector2(596, 355)
+scale = Vector2(3.34301, 3.62121)
 
 [connection signal="animation_finished" from="Intro_DontDie" to="Intro_DontDie" method="_on_animation_finished"]
