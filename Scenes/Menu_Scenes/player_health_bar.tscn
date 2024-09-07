@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctxvi47idcdyu"]
+
+[ext_resource type="Texture2D" uid="uid://uolkkvdoy4ee" path="res://Artwork/GUI_Art/Heart_HBar1.png" id="1_bg6fv"]
+[ext_resource type="Script" path="res://Scripts/GUI_Scripts/player_health_bar.gd" id="2_seuq6"]
+[ext_resource type="Texture2D" uid="uid://bbn7fow6okxap" path="res://Artwork/GUI_Art/White_HBar.png" id="2_ymhfx"]
+[ext_resource type="Texture2D" uid="uid://cer2qsbrdkqhi" path="res://Artwork/GUI_Art/Red_HBar.png" id="3_a03ns"]
+
+[node name="Player_HealthBar" type="TextureProgressBar"]
+offset_right = 76.0
+offset_bottom = 40.0
+texture_over = ExtResource("1_bg6fv")
+script = ExtResource("2_seuq6")
+
+[node name="white_Hbar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 75.0
+offset_bottom = 46.0
+value = 100.0
+texture_progress = ExtResource("2_ymhfx")
+
+[node name="red_Hbar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 75.0
+offset_bottom = 46.0
+value = 100.0
+texture_progress = ExtResource("3_a03ns")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 47.0
+offset_bottom = 49.0
+scale = Vector2(0.298611, 0.296785)
+color = Color(0.0392157, 0, 0.0666667, 1)
+
+[node name="hbar_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="hbar_timer" to="." method="_on_hbar_timer_timeout"]

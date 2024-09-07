@@ -1,16 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://do43ngj7vvdmn"]
+[gd_scene load_steps=17 format=3 uid="uid://do43ngj7vvdmn"]
 
 [ext_resource type="Texture2D" uid="uid://c5f0vhwawfrr8" path="res://Artwork/Backgrounds/8bit_elevatorSpriteSheet.png" id="1_76lir"]
-[ext_resource type="Script" path="res://Scripts/Menu_Scripts/hex_transition.gd" id="1_wtb7q"]
 [ext_resource type="Texture2D" uid="uid://b4o0r65h4y3h7" path="res://Artwork/Character_Sprites/just_the_player_IDLE.png" id="2_epcqp"]
 [ext_resource type="AudioStream" uid="uid://byylgb3idgn7s" path="res://Audio/Music/Come to PawPa - The Pad.wav" id="3_gmkpb"]
-[ext_resource type="Texture2D" uid="uid://d4nax2q6bbd73" path="res://Artwork/Hex_Art/Choose_Card.png" id="4_ygiuu"]
-[ext_resource type="Texture2D" uid="uid://c0dbqjavtusd5" path="res://Artwork/Hex_Art/Pussy_Hex_Card.png" id="5_77s4m"]
-[ext_resource type="Texture2D" uid="uid://v2bwmc7sbwde" path="res://Artwork/Hex_Art/Rabid_Hounds_Card.png" id="6_q5lh0"]
-[ext_resource type="Texture2D" uid="uid://dsook7kjimovv" path="res://Artwork/Hex_Art/Roided_Mutts_Card.png" id="7_atra3"]
-[ext_resource type="Texture2D" uid="uid://cgg3m55lm1crh" path="res://Artwork/Hex_Art/Rabid_Hounds_Description.png" id="8_36kvb"]
-[ext_resource type="Texture2D" uid="uid://bjo3pxh2lklcl" path="res://Artwork/Hex_Art/Roided_Mutts_Description.png" id="9_ktu6f"]
-[ext_resource type="PackedScene" uid="uid://cgoieutkqpevb" path="res://Scenes/Menu_Scenes/GUI_Bits/fade_black_transition.tscn" id="11_bih6f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_raprw"]
 atlas = ExtResource("1_76lir")
@@ -105,16 +97,13 @@ animations = [{
 }]
 
 [node name="Hex_Transition" type="Node2D"]
-scale = Vector2(1.5, 1.5)
-script = ExtResource("1_wtb7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-texture_filter = 1
-position = Vector2(617.333, 343.333)
+position = Vector2(617, 354)
 scale = Vector2(0.939732, 0.939732)
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.5, 0.5)
 
-[node name="ElevatorAnimation" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(611, 324)
 scale = Vector2(4.09725, 4.09725)
 sprite_frames = SubResource("SpriteFrames_402vj")
@@ -122,72 +111,11 @@ animation = &"RepeatMe"
 autoplay = "RepeatMe"
 frame_progress = 0.895728
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608, 329)
+scale = Vector2(9.42399, 9.42399)
+texture = ExtResource("2_epcqp")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gmkpb")
 autoplay = true
-
-[node name="ChooseCard" type="Sprite2D" parent="."]
-position = Vector2(606, 548)
-scale = Vector2(3, 3)
-texture = ExtResource("4_ygiuu")
-
-[node name="PussyHexCard" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(586, 207)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("5_77s4m")
-
-[node name="Hex_Transition-Pussy_Card" type="Button" parent="PussyHexCard"]
-offset_left = -138.597
-offset_top = -240.351
-offset_right = 78.4035
-offset_bottom = 132.649
-scale = Vector2(1.29064, 1.26627)
-flat = true
-
-[node name="RabidHoundsCard" type="Sprite2D" parent="."]
-position = Vector2(300, 356)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_q5lh0")
-
-[node name="Hex_Transition-Rabid_Hounds_Button" type="Button" parent="RabidHoundsCard"]
-offset_left = -134.286
-offset_top = -230.0
-offset_right = 51.7143
-offset_bottom = 94.0
-scale = Vector2(1.46221, 1.43329)
-flat = true
-
-[node name="RabidHoundsDescription" type="Sprite2D" parent="RabidHoundsCard"]
-position = Vector2(10, -332.857)
-scale = Vector2(1.42857, 1.42857)
-texture = ExtResource("8_36kvb")
-
-[node name="RoidedMuttsCard" type="Sprite2D" parent="."]
-position = Vector2(916, 353)
-scale = Vector2(0.69, 0.69)
-texture = ExtResource("7_atra3")
-
-[node name="RoidedMuttsDescription" type="Sprite2D" parent="RoidedMuttsCard"]
-position = Vector2(-13.0435, -327.536)
-scale = Vector2(1.44928, 1.44928)
-texture = ExtResource("9_ktu6f")
-
-[node name="Hex_Transition-Roided_Mutts_Button" type="Button" parent="RoidedMuttsCard"]
-offset_left = -128.986
-offset_top = -236.232
-offset_right = 58.0145
-offset_bottom = 90.7681
-scale = Vector2(1.44614, 1.44962)
-flat = true
-
-[node name="Pawpa_Sprite" type="Sprite2D" parent="."]
-position = Vector2(596, 432)
-scale = Vector2(7.8, 7.8)
-texture = ExtResource("2_epcqp")
-
-[node name="FadeBlack_Transition" parent="." instance=ExtResource("11_bih6f")]
-
-[connection signal="pressed" from="PussyHexCard/Hex_Transition-Pussy_Card" to="." method="_on_hex_transition_pussy_card_pressed"]
-[connection signal="pressed" from="RabidHoundsCard/Hex_Transition-Rabid_Hounds_Button" to="." method="_on_hex_transition_rabid_hounds_button_pressed"]
-[connection signal="pressed" from="RoidedMuttsCard/Hex_Transition-Roided_Mutts_Button" to="." method="_on_hex_transition_roided_mutts_button_pressed"]

@@ -221,3 +221,5 @@ frame_progress = 0.884493
 [node name="smg_gun" parent="." instance=ExtResource("3_mxfyj")]
 position = Vector2(3.66667, 8.66667)
 scale = Vector2(1.2, 1.2)
+
+[node name="Health_Timer" type="Timer" parent="."]

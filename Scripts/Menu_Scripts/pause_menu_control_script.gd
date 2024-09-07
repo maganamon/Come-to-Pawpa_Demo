@@ -1,11 +1,9 @@
 extends Control
 
 var is_game_paused = false
-var can_pause = true
 
 func _ready():
 	# Connect signals for buttons
-	GlobalScript.player_died.connect(_disbablePause)
 	hide()
 	var resume_button = $ResumeButton
 	var quit_button = $QuitButton
@@ -18,13 +16,12 @@ func _ready():
 		print("Error: Buttons not found or not correctly set up.")
 
 func _input(event):
-	if can_pause == true:
-		# Handle pause input even when the game is paused
-		if event.is_action_pressed("pause_menu"):
-			if is_game_paused:
-				unpause_game()
-			else:
-				pause_game()
+	# Handle pause input even when the game is paused
+	if event.is_action_pressed("pause_menu"):
+		if is_game_paused:
+			unpause_game()
+		else:
+			pause_game()
 
 func pause_game():
 	show() #show menu
@@ -36,6 +33,10 @@ func unpause_game():
 	is_game_paused = false
 	get_tree().paused = false  # Unpause the game
 
+func _on_resume_button_pressed():
+	unpause_game()
+
+
 func _on_quit_button_pressed():
 	$QuitButton.icon = load("res://Artwork/GUI_Art/Red_pressed.png")
 	$QuitButton/Label2.global_position.y += 5
@@ -44,6 +45,3 @@ func _on_quit_button_pressed():
 
 func _on_texture_button_pressed():
 	unpause_game()
-
-func _disbablePause():
-	can_pause = false
