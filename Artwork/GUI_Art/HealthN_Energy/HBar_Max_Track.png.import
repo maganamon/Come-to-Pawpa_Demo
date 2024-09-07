@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cer2qsbrdkqhi"
-path="res://.godot/imported/Red_HBar.png-d59ce906063c6a7ad2130d3fac98d7a9.ctex"
+uid="uid://drpoa02ahpmab"
+path="res://.godot/imported/HBar_Max_Track.png-49a45b21c61d5e5456032440d20e6c88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/GUI_Art/Red_HBar.png"
-dest_files=["res://.godot/imported/Red_HBar.png-d59ce906063c6a7ad2130d3fac98d7a9.ctex"]
+source_file="res://Artwork/GUI_Art/HealthN_Energy/HBar_Max_Track.png"
+dest_files=["res://.godot/imported/HBar_Max_Track.png-49a45b21c61d5e5456032440d20e6c88.ctex"]
 
 [params]
 

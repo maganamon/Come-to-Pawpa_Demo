@@ -22,4 +22,7 @@ position = Vector2(13, -2)
 
 [node name="FireRate_Cooldown" type="Timer" parent="."]
 
+[node name="Energy_Recover" type="Timer" parent="."]
+
 [connection signal="timeout" from="FireRate_Cooldown" to="." method="_on_fire_rate_cooldown_timeout"]
+[connection signal="timeout" from="Energy_Recover" to="." method="_on_energy_recover_timeout"]

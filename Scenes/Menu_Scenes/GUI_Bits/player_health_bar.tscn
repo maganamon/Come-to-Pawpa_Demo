@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctxvi47idcdyu"]
+[gd_scene load_steps=8 format=3 uid="uid://ctxvi47idcdyu"]
 
-[ext_resource type="Texture2D" uid="uid://uolkkvdoy4ee" path="res://Artwork/GUI_Art/Heart_HBar1.png" id="1_bg6fv"]
+[ext_resource type="Texture2D" uid="uid://uolkkvdoy4ee" path="res://Artwork/GUI_Art/HealthN_Energy/Heart_HBar1.png" id="1_bg6fv"]
 [ext_resource type="Script" path="res://Scripts/GUI_Scripts/player_health_bar.gd" id="2_seuq6"]
-[ext_resource type="Texture2D" uid="uid://bbn7fow6okxap" path="res://Artwork/GUI_Art/White_HBar.png" id="2_ymhfx"]
-[ext_resource type="Texture2D" uid="uid://cer2qsbrdkqhi" path="res://Artwork/GUI_Art/Red_HBar.png" id="3_a03ns"]
+[ext_resource type="Texture2D" uid="uid://bbn7fow6okxap" path="res://Artwork/GUI_Art/HealthN_Energy/White_HBar.png" id="2_ymhfx"]
+[ext_resource type="Texture2D" uid="uid://cer2qsbrdkqhi" path="res://Artwork/GUI_Art/HealthN_Energy/Red_HBar.png" id="3_a03ns"]
+[ext_resource type="Texture2D" uid="uid://joi7ic088xl8" path="res://Artwork/GUI_Art/HealthN_Energy/BlkUnderBar.png" id="5_kwt2k"]
+[ext_resource type="Texture2D" uid="uid://c4u41l647gy3w" path="res://Artwork/GUI_Art/HealthN_Energy/YellowBar.png" id="6_ataap"]
+[ext_resource type="Texture2D" uid="uid://b0dl7wciac4v6" path="res://Artwork/GUI_Art/HealthN_Energy/EnergyBar_Outline.png" id="7_javm7"]
 
 [node name="Player_HealthBar" type="TextureProgressBar"]
 offset_right = 76.0
@@ -40,5 +43,21 @@ scale = Vector2(0.298611, 0.296785)
 color = Color(0.0392157, 0, 0.0666667, 1)
 
 [node name="hbar_timer" type="Timer" parent="."]
+
+[node name="yellow_Ebar" type="TextureProgressBar" parent="."]
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 67.0
+offset_bottom = 57.0
+scale = Vector2(0.958743, 0.861027)
+max_value = 15.0
+value = 15.0
+texture_under = ExtResource("5_kwt2k")
+texture_progress = ExtResource("6_ataap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(46, 20)
+scale = Vector2(0.962922, 0.75)
+texture = ExtResource("7_javm7")
 
 [connection signal="timeout" from="hbar_timer" to="." method="_on_hbar_timer_timeout"]
