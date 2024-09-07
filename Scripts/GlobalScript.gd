@@ -3,7 +3,7 @@ extends Node
 var currentLevel = 1
 var pause_menu_instance = null
 var kill_counter = 0
-var LevelOne_Time = 120.0
+var LevelOne_Time = 5.0
 var LevelTwo_Time = 140.0
 var PLAYER_GPS = null
 var PLAYER_HP = 100
@@ -16,8 +16,11 @@ signal shot_fired()
 signal player_hit()
 signal projEnemy_shot()
 signal hurtDog()
-signal startTransition()
-signal endTransition
+ # Transition Black Screen Signals
+signal No_BlkScreen()
+signal Yes_BlkScreen()
+signal endTransition()
+ #
 ## Sound Signals END ##
 
 func _ready():

@@ -1,7 +1,7 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-##	$AnimatedSprite2D.play("RepeatMe")
+func _ready():
+	GlobalScript.No_BlkScreen.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

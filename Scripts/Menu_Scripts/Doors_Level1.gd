@@ -17,11 +17,11 @@ func _ready():
 	round_timer.start(timeToSet)
 	GlobalScript.player_died.connect(_on_player_died)
 	concurrent_doors = 1
+	GlobalScript.No_BlkScreen.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if ENDROUND == true:
-		enemiesLeft = get_tree().get_nodes_in_group("Enemies").size()
+	enemiesLeft = get_tree().get_nodes_in_group("Enemies").size()
 
 ## Randomly spawn based on a random number generator
 ## 1 = top_Elevator, 2 = right_elevator, 3 = left_elevator
@@ -82,7 +82,7 @@ func _on_doors_timer_timeout() -> void:
 		$DoorsTimer.start(4.0)
 	if ENDROUND == true && enemiesLeft == 0:
 		GlobalScript.currentLevel += 1
-		GlobalScript.startTransition.emit()
+		GlobalScript.Yes_BlkScreen.emit()
 		await GlobalScript.endTransition
 		get_tree().change_scene_to_file("res://Scenes/Menu_Scenes/hex_transition.tscn")
 	else:
