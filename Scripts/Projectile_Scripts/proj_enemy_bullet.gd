@@ -25,7 +25,8 @@ func _physics_process(delta):
 #Logic to free the bullet
 ###NOT USING THIS YET!!!
 func _on_body_entered(body):
-	queue_free()
-	if body.has_method("take_damage"):
-		body.take_damage()
+	if body.has_method("take_damage_mob"):
+		queue_free()
+		var push = global_position.direction_to(body.global_position)
+		body.take_damage_mob(damage, push)
 	

@@ -9,7 +9,6 @@ var currentDirection = "none"
 var gun_on_right = true
 #
 ##Healing Variables ############
-var can_heal = true
 var healing_pause = 2.5
 var health_max = 100
 var health = health_max
@@ -22,6 +21,7 @@ var gun_distance = 10.0
 
 func _ready():
 	GlobalScript.PLAYER_GPS = self.global_position
+	GlobalScript.over_Heat.connect(_loseHP)
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
 
@@ -46,10 +46,6 @@ func _process(delta):
 		$smg_gun/Sprite2D.flip_v = false
 	## Gun Circle END ####
 	
-	## Healing Rate ####
-	if (health < health_max) && can_heal:
-		health += 1
-	## Healing Rate END ####
 # This function is called every physics frame (fixed timestep)
 func _physics_process(delta):
 	# Handle player movement based on input
@@ -58,6 +54,9 @@ func _physics_process(delta):
 		velocity += knockback
 		move_and_slide()
 		
+func _loseHP():
+	health += -20
+
 # Function to handle player movement input and apply velocity
 func player_movement(_delta):
 	if Input.is_action_pressed("new_up") && Input.is_action_pressed("new_right"):
@@ -147,7 +146,6 @@ func playAnimation(movement):
 # Function to take damage
 func take_damage_mob(dmg_amt, pushed):
 	GlobalScript.player_hit.emit()
-	can_heal = false
 	health -= dmg_amt # Reduce current health by damage amount
 	health_max -= dmg_amt
 	if health <= 0:
@@ -155,7 +153,6 @@ func take_damage_mob(dmg_amt, pushed):
 		GlobalScript.PLAYER_HP = 0
 		die()  # Call the die function if health reaches 0
 	# Have a 3 second healing cooldown after being hit ###
-	$Health_Timer.start(healing_pause)
 	## knock back logic here:
 	knockback = Vector2.ZERO + (pushed * 300)
 	knockback_tween = get_tree().create_tween()
