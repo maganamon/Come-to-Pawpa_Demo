@@ -11,6 +11,7 @@ const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 func _ready():
 	energy = ENERGY_MAX
 	GlobalScript.PLAYER_ENERGY = energy
+	
 func _process(_delta):
 	GlobalScript.PLAYER_ENERGY = energy
 	if can_shoot && Input.is_action_pressed("shoot") && energy != 0:

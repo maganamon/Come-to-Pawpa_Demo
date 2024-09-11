@@ -55,6 +55,7 @@ func _physics_process(delta):
 		move_and_slide()
 		
 func _loseHP():
+	GlobalScript.player_hit.emit()
 	health += -20
 
 # Function to handle player movement input and apply velocity
