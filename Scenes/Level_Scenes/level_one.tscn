@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_bdmrm"]
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/Doors_Level1.gd" id="4_smbxf"]
 [ext_resource type="PackedScene" uid="uid://c0nj11hsl2vxp" path="res://Scenes/Object Scenes/elevator_door.tscn" id="5_e2mt5"]
-[ext_resource type="PackedScene" uid="uid://brtpfk81qih5" path="res://Scenes/Menu_Scenes/entire_gui.tscn" id="6_c4ipq"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu_Scenes/entire_gui.tscn" id="6_c4ipq"]
 [ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="11_k7gpq"]
 [ext_resource type="AudioStream" uid="uid://bkvpvkcq2y2av" path="res://Audio/Music/Come to PawPa - Time is Running Out (2 minute version).wav" id="12_nb0vq"]
 

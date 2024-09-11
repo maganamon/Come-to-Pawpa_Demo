@@ -45,6 +45,7 @@ color = Color(0.0392157, 0, 0.0666667, 1)
 [node name="hbar_timer" type="Timer" parent="."]
 
 [node name="yellow_Ebar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 17.0
 offset_right = 67.0
