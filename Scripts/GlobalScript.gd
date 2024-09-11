@@ -8,7 +8,8 @@ var LevelTwo_Time = 140.0
 var PLAYER_GPS = null
 var PLAYER_HP = 100
 var PLAYER_ENERGY = 15
-var dogHealth = 1
+var dog_health_hex = 0
+var dog_speed_hex = 0
 
 ## Sound Signals ##
 signal player_died()

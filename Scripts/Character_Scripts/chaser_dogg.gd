@@ -9,6 +9,8 @@ var damage_dealt = 10
 var health = 1
 # Get the player's position
 func _ready():
+	health += GlobalScript.dog_health_hex
+	speed += GlobalScript.dog_speed_hex
 	pass
 
 func _process(_delta):

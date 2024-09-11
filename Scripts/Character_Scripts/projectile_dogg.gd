@@ -14,6 +14,7 @@ var bulletsShot = 0
 var health = 2
 
 func _ready():
+	health += GlobalScript.dog_health_hex
 	releventMarker = $LeftMarker
 	$ProjEnemy_Timer.start(2.0)
 	
