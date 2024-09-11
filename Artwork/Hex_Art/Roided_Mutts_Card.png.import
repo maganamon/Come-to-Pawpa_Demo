@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbn7fow6okxap"
-path="res://.godot/imported/White_HBar.png-12a589884c43a5444db2aa9d4e9411c6.ctex"
+uid="uid://dsook7kjimovv"
+path="res://.godot/imported/Roided_Mutts_Card.png-683d3088810e1d843b0428c36c0bae7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/GUI_Art/White_HBar.png"
-dest_files=["res://.godot/imported/White_HBar.png-12a589884c43a5444db2aa9d4e9411c6.ctex"]
+source_file="res://Artwork/Hex_Art/Roided_Mutts_Card.png"
+dest_files=["res://.godot/imported/Roided_Mutts_Card.png-683d3088810e1d843b0428c36c0bae7c.ctex"]
 
 [params]
 
