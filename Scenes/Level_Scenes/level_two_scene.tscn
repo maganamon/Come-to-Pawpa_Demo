@@ -336,7 +336,7 @@ zoom = Vector2(0.5, 0.5)
 [node name="placeholder_player" parent="." instance=ExtResource("2_ghml2")]
 position = Vector2(602, 347)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Enemies"]]
 collision_mask = 7
 
 [node name="left_wall" type="CollisionShape2D" parent="StaticBody2D"]
