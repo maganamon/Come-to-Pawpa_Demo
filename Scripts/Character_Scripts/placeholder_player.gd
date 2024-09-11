@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var isInvisible = false
+var invisibilityCooldown = 0.5
 # Movement and Knockback ##
 const speed = 300.0
 var knockback = Vector2.ZERO  # To store knockback velocity
@@ -146,22 +148,25 @@ func playAnimation(movement):
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Function to take damage
 func take_damage_mob(dmg_amt, pushed):
-	GlobalScript.player_hit.emit()
-	health -= dmg_amt # Reduce current health by damage amount
-	health_max -= dmg_amt
-	if health <= 0:
-		health = 0
-		GlobalScript.PLAYER_HP = 0
-		die()  # Call the die function if health reaches 0
-	# Have a 3 second healing cooldown after being hit ###
-	## knock back logic here:
-	knockback = Vector2.ZERO + (pushed * 300)
-	knockback_tween = get_tree().create_tween()
-	knockback_tween.parallel().tween_property(self, "knockback", Vector2.ZERO, knockback_decay)
-	## Knockback Logic END #####
-	#Change color when hit
-	$AnimatedSprite2D.modulate = Color(1,0,0,1)
-	knockback_tween.parallel().tween_property($AnimatedSprite2D, "modulate", Color(1,1,1,1), knockback_decay)
+	if isInvisible == false:
+		isInvisible = true
+		$invisibility_Timer.start(invisibilityCooldown)
+		GlobalScript.player_hit.emit()
+		health -= dmg_amt # Reduce current health by damage amount
+		health_max -= dmg_amt
+		if health <= 0:
+			health = 0
+			GlobalScript.PLAYER_HP = 0
+			die()  # Call the die function if health reaches 0
+		# Have a 3 second healing cooldown after being hit ###
+		## knock back logic here:
+		knockback = Vector2.ZERO + (pushed * 300)
+		knockback_tween = get_tree().create_tween()
+		knockback_tween.parallel().tween_property(self, "knockback", Vector2.ZERO, knockback_decay)
+		## Knockback Logic END #####
+		#Change color when hit
+		$AnimatedSprite2D.modulate = Color(1,0,0,1)
+		knockback_tween.parallel().tween_property($AnimatedSprite2D, "modulate", Color(1,1,1,1), knockback_decay)
 	
 func die():
 	print(GlobalScript.kill_counter)
@@ -172,3 +177,7 @@ func die():
 	
 func _on_level_music_ready() -> void:
 	pass # Replace with function body.
+
+
+func _on_invisibility_timer_timeout() -> void:
+	isInvisible = false
