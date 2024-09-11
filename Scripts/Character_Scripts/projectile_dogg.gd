@@ -8,7 +8,7 @@ var move_speed = 100.0
 var player_position: Vector2
 var direction: Vector2
 
-##var player
+var damage_dealt = 20
 const PROJ_BULLET = preload("res://Scenes/Projectile_Scenes/proj_enemy_bullet.tscn")
 const BULLETS_ALLOWED = 8
 var facingDirection = ""
@@ -96,3 +96,9 @@ func take_damage():
 
 func _on_proj_enemy_timer_timeout():
 	can_shoot = true
+
+
+func _on_area_2d_proj_enemy_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage_mob"):
+		var push = global_position.direction_to(body.global_position)
+		body.take_damage_mob(damage_dealt, push)
