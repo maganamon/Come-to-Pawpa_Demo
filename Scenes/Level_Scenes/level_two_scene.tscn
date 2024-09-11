@@ -361,35 +361,33 @@ position = Vector2(669, 743)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_d5kj6")
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Doors2" type="Node2D" parent="Node2D"]
+[node name="Doors2" type="Node2D" parent="."]
 script = ExtResource("4_57q66")
 
-[node name="top_elevator" parent="Node2D/Doors2" instance=ExtResource("5_x0pgg")]
+[node name="top_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
 position = Vector2(611, 98)
 
-[node name="right_elevator" parent="Node2D/Doors2" instance=ExtResource("5_x0pgg")]
+[node name="right_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
 position = Vector2(1089, 401)
 rotation = 1.5708
 
-[node name="left_elevator" parent="Node2D/Doors2" instance=ExtResource("5_x0pgg")]
+[node name="left_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
 position = Vector2(122, 414)
 rotation = -1.5708
 
-[node name="bottomLeft_elevator" parent="Node2D/Doors2" instance=ExtResource("5_x0pgg")]
+[node name="bottomLeft_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
 position = Vector2(381, 686)
 rotation = 3.14159
 
-[node name="bottomRight_elevator" parent="Node2D/Doors2" instance=ExtResource("5_x0pgg")]
+[node name="bottomRight_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
 position = Vector2(840, 686)
 rotation = -3.14159
 
-[node name="spawn_timer" type="Timer" parent="Node2D/Doors2"]
+[node name="spawn_timer" type="Timer" parent="Doors2"]
 wait_time = 2.0
 autostart = true
 
-[node name="DoorsTimer" type="Timer" parent="Node2D/Doors2"]
+[node name="DoorsTimer" type="Timer" parent="Doors2"]
 wait_time = 120.0
 one_shot = true
 
@@ -404,6 +402,6 @@ autoplay = true
 
 [node name="SoundFX_Global" parent="." instance=ExtResource("8_kqxj1")]
 
-[connection signal="timeout" from="Node2D/Doors2/spawn_timer" to="Node2D/Doors2" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Node2D/Doors2/DoorsTimer" to="Node2D/Doors2" method="_on_doors_timer_timeout"]
+[connection signal="timeout" from="Doors2/spawn_timer" to="Doors2" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Doors2/DoorsTimer" to="Doors2" method="_on_doors_timer_timeout"]
 [connection signal="ready" from="level 2 music" to="placeholder_player" method="_on_level_2_music_ready"]
