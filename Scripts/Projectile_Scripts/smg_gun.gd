@@ -5,7 +5,7 @@ var can_Erecover = false
 var ENERGY_MAX = 15
 var cooldown_time = 0.15
 var energy = 15
-var E_RecoveryTime = 0.5
+var E_RecoveryTime = 0.7
 const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 
 func _ready():
@@ -18,7 +18,7 @@ func _process(_delta):
 			# Start shooting
 			shoot()
 	if can_Erecover == true && Input.is_action_pressed("shoot") != true && energy < ENERGY_MAX:
-		energy += 1
+		energy += 0.33
 
 func shoot():
 	#Create a Bullet on Marker
@@ -32,7 +32,7 @@ func shoot():
 		get_tree().root.add_child(new_bullet)
 		$FireRate_Cooldown.start(cooldown_time)
 		$Energy_Recover.start(E_RecoveryTime)
-		if energy == 0:
+		if energy <= 0:
 			GlobalScript.over_Heat.emit()
 func _on_fire_rate_cooldown_timeout():
 	can_shoot = true
