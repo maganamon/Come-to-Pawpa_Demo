@@ -59,6 +59,10 @@ func _physics_process(delta):
 func _loseHP():
 	GlobalScript.player_hit.emit()
 	health += -20
+	if health <= 0:
+			health = 0
+			GlobalScript.PLAYER_HP = 0
+			die()  # Call the die function if health reaches 0
 
 # Function to handle player movement input and apply velocity
 func player_movement(_delta):

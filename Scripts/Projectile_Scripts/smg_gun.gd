@@ -14,7 +14,7 @@ func _ready():
 	
 func _process(_delta):
 	GlobalScript.PLAYER_ENERGY = energy
-	if can_shoot && Input.is_action_pressed("shoot") && energy != 0:
+	if can_shoot && Input.is_action_pressed("shoot") && energy > 0:
 			# Start shooting
 			shoot()
 	if can_Erecover == true && Input.is_action_pressed("shoot") != true && energy < ENERGY_MAX:
