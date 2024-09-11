@@ -181,3 +181,7 @@ func _on_level_music_ready() -> void:
 
 func _on_invisibility_timer_timeout() -> void:
 	isInvisible = false
+
+
+func _on_level_2_music_ready() -> void:
+	pass # Replace with function body.

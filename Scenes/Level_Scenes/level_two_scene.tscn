@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://crpe2fay87ku4"]
+[gd_scene load_steps=18 format=3 uid="uid://crpe2fay87ku4"]
 
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_mgudr"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_ghml2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Menu_Scripts/lvl2_doors.gd" id="4_57q66"]
 [ext_resource type="Texture2D" uid="uid://bnqo4ae8cnvw0" path="res://Artwork/Backgrounds/level2_background.png" id="4_r07lc"]
 [ext_resource type="PackedScene" uid="uid://c0nj11hsl2vxp" path="res://Scenes/Object Scenes/elevator_door.tscn" id="5_x0pgg"]
+[ext_resource type="AudioStream" uid="uid://6emo6idwssax" path="res://Audio/Music/Come to Pawpa - Foreboding Anxiety.mp3" id="7_ri3j1"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -396,5 +397,10 @@ offset = Vector2(0, -30)
 transform = Transform2D(1, 0, 0, 1, 0, -30)
 follow_viewport_enabled = true
 
+[node name="level 2 music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ri3j1")
+autoplay = true
+
 [connection signal="timeout" from="Node2D/Doors2/spawn_timer" to="Node2D/Doors2" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Node2D/Doors2/DoorsTimer" to="Node2D/Doors2" method="_on_doors_timer_timeout"]
+[connection signal="ready" from="level 2 music" to="placeholder_player" method="_on_level_2_music_ready"]
