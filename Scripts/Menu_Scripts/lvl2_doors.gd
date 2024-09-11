@@ -1,5 +1,6 @@
 extends Node2D
 
+const PROJENEMY = preload("res://Scenes/Character_Scenes/projectile_dogg.tscn")
 const CHASER = preload("res://Scenes/Character_Scenes/chaser_dogg.tscn")
 var random = RandomNumberGenerator.new()
 var can_spawn = true
@@ -30,12 +31,13 @@ func _on_spawn_timer_timeout():
 		for i in range(concurrent_doors):
 			if can_spawn:
 				random.randomize()
-				rand_int = random.randi_range(1, 5)
+				rand_int = random.randi_range(1, 6)
 				random.randomize()
-				spwnAmt = random.randi_range(1, 3)
+				spwnAmt = random.randi_range(1, 5)
+				## if SpwnAmt == 4 spawn PROJECTILE
 				# Determine which elevator to use based on rand_int
 				if rand_int == 1:
-					spawn_enemy($"top_elevator/Elevator-Referance_Rect", $top_elevator, spwnAmt)
+					spawn_enemy($"topLeft_elevator/Elevator-Referance_Rect", $topLeft_elevator, spwnAmt)
 				elif rand_int == 2:
 					spawn_enemy($"right_elevator/Elevator-Referance_Rect", $right_elevator, spwnAmt)
 				elif rand_int == 3:
@@ -44,6 +46,9 @@ func _on_spawn_timer_timeout():
 					spawn_enemy($"bottomLeft_elevator/Elevator-Referance_Rect", $bottomLeft_elevator, spwnAmt)
 				elif rand_int == 5:
 					spawn_enemy($"bottomRight_elevator/Elevator-Referance_Rect", $bottomRight_elevator, spwnAmt)
+				elif rand_int == 6:
+					spawn_enemy($"topRight_elevator/Elevator-Referance_Rect", $topRight_elevator, spwnAmt)
+				
 		if (round_timer.time_left <= 0.0):
 			can_spawn = false
 		#after 35 seconds
@@ -54,7 +59,10 @@ func _on_spawn_timer_timeout():
 			concurrent_doors = 2
 
 func spawn_enemy(spawn_area, elevator, how_many):
-	for i in range(how_many):
+	print("START OF NEW SPAWN")
+	for i in range(how_many,0,-1):
+		print("i is :" + str(i))
+		print("how_many: " + str(how_many))
 		# Play the elevator opening animation
 		elevator.play("opening")
 		# Generate a random position within the rect
@@ -63,12 +71,26 @@ func spawn_enemy(spawn_area, elevator, how_many):
 		var random_position = Vector2(random_x, random_y)
 		
 		# Instance and position the enemy
+		if i == 5:
+			var new_chaser = CHASER.instantiate()
+			new_chaser.global_position = spawn_area.global_position + random_position
+			get_tree().root.add_child(new_chaser)
+			elevator.play("closing")
+		if i >= 4 :
+			var new_projEnemy = PROJENEMY.instantiate()
+			new_projEnemy.global_position = spawn_area.global_position + random_position
+			get_tree().root.add_child(new_projEnemy)
+			i = i % 4
+			elevator.play("closing")
+			break
+			
 		var new_chaser = CHASER.instantiate()
 		new_chaser.global_position = spawn_area.global_position + random_position
 		get_tree().root.add_child(new_chaser)
-		
+		print("spawn less 3 dog")
 		# Play the elevator closing animation
 		elevator.play("closing")
+	print("done spawning")
 func _on_player_died():
 	can_spawn = false
 		

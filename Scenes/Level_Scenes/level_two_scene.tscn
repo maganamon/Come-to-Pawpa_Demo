@@ -364,24 +364,27 @@ shape = SubResource("RectangleShape2D_d5kj6")
 [node name="Doors2" type="Node2D" parent="."]
 script = ExtResource("4_57q66")
 
-[node name="top_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
-position = Vector2(611, 98)
+[node name="topLeft_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
+position = Vector2(319, 101)
+
+[node name="topRight_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
+position = Vector2(985, 83)
 
 [node name="right_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
-position = Vector2(1089, 401)
+position = Vector2(1105, 303)
 rotation = 1.5708
 
 [node name="left_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
-position = Vector2(122, 414)
+position = Vector2(123, 315)
 rotation = -1.5708
 
 [node name="bottomLeft_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
-position = Vector2(381, 686)
-rotation = 3.14159
+position = Vector2(125, 567)
+rotation = -1.5708
 
 [node name="bottomRight_elevator" parent="Doors2" instance=ExtResource("5_x0pgg")]
-position = Vector2(840, 686)
-rotation = -3.14159
+position = Vector2(1107, 557)
+rotation = 1.5708
 
 [node name="spawn_timer" type="Timer" parent="Doors2"]
 wait_time = 2.0

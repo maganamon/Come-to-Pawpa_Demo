@@ -80,7 +80,7 @@ func _on_doors_timer_timeout() -> void:
 		ENDROUND = true
 		print(enemiesLeft)
 		$DoorsTimer.start(4.0)
-	if ENDROUND == true && enemiesLeft == 0:
+	elif ENDROUND == true && enemiesLeft == 0:
 		GlobalScript.currentLevel += 1
 		GlobalScript.Yes_BlkScreen.emit()
 		await GlobalScript.endTransition

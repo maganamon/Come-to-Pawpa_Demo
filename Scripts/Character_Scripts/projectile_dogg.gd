@@ -11,7 +11,7 @@ var can_shoot = false
 var cooldown = 0.10
 var longWait = 3.0
 var bulletsShot = 0
-var health = 2
+var health = 1
 
 func _ready():
 	health += GlobalScript.dog_health_hex
