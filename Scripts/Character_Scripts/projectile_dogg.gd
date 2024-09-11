@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
+# Adjustable properties
+var safe_distance = 250.0
+var tooFar = 350.0
+var move_speed = 100.0
+# Variables
+var player_position: Vector2
+var direction: Vector2
+
 ##var player
 const PROJ_BULLET = preload("res://Scenes/Projectile_Scenes/proj_enemy_bullet.tscn")
-const SPEED = 0.0
 const BULLETS_ALLOWED = 8
 var facingDirection = ""
 var releventMarker
@@ -15,9 +22,29 @@ var health = 1
 
 func _ready():
 	health += GlobalScript.dog_health_hex
+	move_speed += GlobalScript.dog_speed_hex
 	releventMarker = $LeftMarker
 	$ProjEnemy_Timer.start(2.0)
 	
+
+func _physics_process(delta: float) -> void:
+	# Get the player's position
+	player_position = GlobalScript.PLAYER_GPS
+	# Calculate the direction from the enemy to the player
+	direction = global_position.direction_to(player_position)
+	# Calculate the distance to the player
+	var distance_to_player = global_position.distance_to(player_position)
+	# Move away if the player is too close
+	if distance_to_player > tooFar: 
+		velocity = direction * move_speed
+		move_and_slide()
+	elif distance_to_player < safe_distance:
+		velocity = -direction * move_speed
+		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
+		move_and_slide()  # Stop moving when at a safe distance
+
 func _process(_delta):
 	if (GlobalScript.PLAYER_GPS.x < global_position.x) && (facingDirection != "left"):
 		_update_directionStuff("left")

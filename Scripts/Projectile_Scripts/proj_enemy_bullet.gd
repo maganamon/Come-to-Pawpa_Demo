@@ -3,7 +3,7 @@ extends Area2D
 var speed = 1500
 var direction = Vector2.ZERO
 var traveled_distance = 0
-var damage = 1
+var damage = 10
 const MAX_DISTANCE = 700  # Adjust this value as needed
 
 func _ready():
