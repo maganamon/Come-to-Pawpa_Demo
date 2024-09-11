@@ -5,7 +5,7 @@ var can_Erecover = false
 var ENERGY_MAX = 15
 var cooldown_time = 0.15
 var energy = 15
-var E_RecoveryTime = 2.0
+var E_RecoveryTime = 0.5
 const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 
 func _ready():
