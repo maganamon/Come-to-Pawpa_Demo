@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlah013c042if"]
+[gd_scene load_steps=8 format=3 uid="uid://dlah013c042if"]
 
 [ext_resource type="PackedScene" uid="uid://v0v03he00o6k" path="res://Scenes/Character_Scenes/projectile_dogg.tscn" id="1_6lhqs"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="2_mm4no"]
 [ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="3_u2bum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6u5o"]
+size = Vector2(24.146, 98.7774)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08um5"]
+size = Vector2(41.4, 185.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfqtr"]
+size = Vector2(21.264, 70.2421)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8p4"]
+size = Vector2(183.281, 1500.65)
 
 [node name="TEST_forProjDogg" type="Node2D"]
 
@@ -16,3 +28,30 @@ position = Vector2(-170, -203)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Enemies"]]
+position = Vector2(-1048, -562)
+collision_layer = 3
+collision_mask = 7
+
+[node name="left_wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(69, 245)
+rotation = 1.5708
+scale = Vector2(53.1265, 1.81216)
+shape = SubResource("RectangleShape2D_b6u5o")
+
+[node name="right_wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1157, 420)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_08um5")
+
+[node name="top_wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(672, 43)
+rotation = -0.00217766
+scale = Vector2(72.8515, 2.63517)
+shape = SubResource("RectangleShape2D_nfqtr")
+
+[node name="bottom_wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(669, 743)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_ad8p4")
