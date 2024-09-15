@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://r73f5143qcnd"]
+
+[ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="1_ovjyt"]
+[ext_resource type="PackedScene" uid="uid://dqvgm3q4nx6h1" path="res://Scenes/Menu_Scenes/entire_gui.tscn" id="2_wleb0"]
+[ext_resource type="PackedScene" uid="uid://chjemea4ygadc" path="res://Scenes/Object Scenes/yellow_battery_pickup.tscn" id="3_re477"]
+
+[node name="TEST_Battery" type="Node2D"]
+
+[node name="placeholder_player" parent="." instance=ExtResource("1_ovjyt")]
+position = Vector2(602, 347)
+
+[node name="EntireGUI" parent="." instance=ExtResource("2_wleb0")]
+offset = Vector2(0, -30)
+transform = Transform2D(1, 0, 0, 1, 0, -30)
+follow_viewport_enabled = true
+
+[node name="Battery_Pickup" parent="." instance=ExtResource("3_re477")]
+position = Vector2(378, 324)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(617, 354)
+offset = Vector2(0, 15)
+zoom = Vector2(0.5, 0.5)

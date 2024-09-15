@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dal87grgl1mri"]
 
-[ext_resource type="Script" path="res://over_heating_node.gd" id="1_uox5c"]
+[ext_resource type="Script" path="res://Scripts/Menu_Scripts/over_heating_node.gd" id="1_uox5c"]
 [ext_resource type="Texture2D" uid="uid://bkx0jlmg30byq" path="res://Artwork/Backgrounds/OverHeat_Warning.png" id="2_rfb68"]
 
 [sub_resource type="Animation" id="Animation_3nqht"]

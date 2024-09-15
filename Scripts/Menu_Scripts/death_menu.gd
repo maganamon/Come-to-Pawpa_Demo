@@ -14,6 +14,12 @@ func _on_death_menu_restart_button_pressed():
 	for Enemies in get_tree().get_nodes_in_group("Enemies"):
 		print("Getting rid of bad boy")
 		Enemies.queue_free()
+	for Projectiles in get_tree().get_nodes_in_group("Projectiles"):
+		print("Getting rid of PewPews")
+		Projectiles.queue_free()
+	for Pickups in get_tree().get_nodes_in_group("Pickups"):
+		print("Getting rid of Battery")
+		Pickups.queue_free()
 	get_tree().reload_current_scene()
 	
 func _on_player_died():

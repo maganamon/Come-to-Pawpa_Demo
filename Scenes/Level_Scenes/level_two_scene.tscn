@@ -395,6 +395,12 @@ autostart = true
 wait_time = 120.0
 one_shot = true
 
+[node name="batterySpawnArea" type="ReferenceRect" parent="Doors2"]
+offset_left = 281.0
+offset_top = 252.0
+offset_right = 940.0
+offset_bottom = 628.0
+
 [node name="EntireGUI" parent="." instance=ExtResource("3_k4cce")]
 offset = Vector2(0, -30)
 transform = Transform2D(1, 0, 0, 1, 0, -30)

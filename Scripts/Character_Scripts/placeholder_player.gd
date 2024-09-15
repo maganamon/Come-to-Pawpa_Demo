@@ -14,6 +14,7 @@ var gun_on_right = true
 var healing_pause = 2.5
 var health_max = 100
 var health = health_max
+var batteryPickup = 20
 ## Heath Variables END ##################
 # The radius of the circle around the player where the gun will follow.
 @onready var gun : = $smg_gun
@@ -23,6 +24,7 @@ var gun_distance = 10.0
 
 func _ready():
 	GlobalScript.PLAYER_GPS = self.global_position
+	GlobalScript.energyPickup.connect(moreHealthPls)
 	GlobalScript.over_Heat.connect(_loseHP)
 	# Play the front idle animation when the game starts
 	$AnimatedSprite2D.play("Idle")
@@ -164,7 +166,8 @@ func take_damage_mob(dmg_amt, pushed):
 			die()  # Call the die function if health reaches 0
 		# Have a 3 second healing cooldown after being hit ###
 		## knock back logic here:
-		knockback = Vector2.ZERO + (pushed * 300)
+		## change the multiplied constant after pushed to change knockback
+		knockback = Vector2.ZERO + (pushed * 200)
 		knockback_tween = get_tree().create_tween()
 		knockback_tween.parallel().tween_property(self, "knockback", Vector2.ZERO, knockback_decay)
 		## Knockback Logic END #####
@@ -178,7 +181,13 @@ func die():
 	GlobalScript.kill_counter = 0
 	GlobalScript.player_died.emit()
 	queue_free()
-	
+
+func moreHealthPls():
+	health += batteryPickup
+	if health > health_max:
+		health = health_max
+
+
 func _on_level_music_ready() -> void:
 	pass # Replace with function body.
 

@@ -19,12 +19,16 @@ signal over_Heat()
 signal player_hit()
 signal projEnemy_shot()
 signal hurtDog()
+## Sound Signals END ##
+
+signal energyPickup()
+
  # Transition Black Screen Signals
 signal No_BlkScreen()
 signal Yes_BlkScreen()
 signal endTransition()
  #
-## Sound Signals END ##
+
 
 func _ready():
 	# Preload the PauseMenu scene using the correct path

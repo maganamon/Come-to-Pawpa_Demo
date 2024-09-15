@@ -33,6 +33,8 @@ project/assembly_name="Come to Pawpa Demo"
 [global_group]
 
 Enemies="Bad_Dogs_Here"
+Projectiles="projectiles here to free them on restart"
+Pickups=""
 
 [input]
 

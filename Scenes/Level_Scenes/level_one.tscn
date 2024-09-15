@@ -389,6 +389,12 @@ autostart = true
 wait_time = 120.0
 one_shot = true
 
+[node name="batterySpawnArea" type="ReferenceRect" parent="Doors"]
+offset_left = 264.0
+offset_top = 220.0
+offset_right = 940.0
+offset_bottom = 538.0
+
 [node name="placeholder_player" parent="." instance=ExtResource("2_bdmrm")]
 position = Vector2(602, 347)
 

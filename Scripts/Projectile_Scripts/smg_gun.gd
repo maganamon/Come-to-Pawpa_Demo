@@ -34,6 +34,7 @@ func shoot():
 		$Energy_Recover.start(E_RecoveryTime)
 		if energy <= 0:
 			GlobalScript.over_Heat.emit()
+
 func _on_fire_rate_cooldown_timeout():
 	can_shoot = true
 

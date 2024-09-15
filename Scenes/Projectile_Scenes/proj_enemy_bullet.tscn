@@ -7,7 +7,7 @@
 radius = 1.0
 height = 6.0
 
-[node name="ProjEnemy_Bullet" type="Area2D"]
+[node name="ProjEnemy_Bullet" type="Area2D" groups=["Projectiles"]]
 script = ExtResource("1_rv6s3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

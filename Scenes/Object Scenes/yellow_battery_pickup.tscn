@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://chjemea4ygadc"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile_Scripts/battery_pickup.gd" id="1_xb8py"]
+[ext_resource type="Texture2D" uid="uid://blsetl08vw360" path="res://Artwork/Object_Art/yellow_battery.png" id="2_iivoy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5tie"]
+radius = 81.0
+height = 242.0
+
+[node name="Battery_Pickup" type="Area2D" groups=["Pickups"]]
+scale = Vector2(0.18, 0.18)
+script = ExtResource("1_xb8py")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iivoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f5tie")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
