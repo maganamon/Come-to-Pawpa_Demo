@@ -45,7 +45,7 @@ func _on_spawn_timer_timeout():
 	if can_spawn == true:
 		timeLeftBuddy = int(floor($DoorsTimer.time_left))
 		print(timeLeftBuddy, "-----", timeLeftBuddy % 25)
-		if (timeLeftBuddy < timeToSet - 40) && (timeLeftBuddy % 25 <= 1):
+		if (timeLeftBuddy < timeToSet) && (timeLeftBuddy % 2 <= 1):
 			rand_BatteryX = batteryAreaX * randf()
 			rand_BatteryY = batteryAreaY * randf()
 			spawnBatteryHere = Vector2(rand_BatteryX, rand_BatteryY)
@@ -96,7 +96,7 @@ func spawn_enemy(spawn_area, elevator, how_many):
 
 func _on_player_died():
 	can_spawn = false
-		
+
 
 func _on_doors_timer_timeout() -> void:
 	can_spawn = false

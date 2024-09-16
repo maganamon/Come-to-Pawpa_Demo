@@ -159,7 +159,6 @@ func take_damage_mob(dmg_amt, pushed):
 		$invisibility_Timer.start(invisibilityCooldown)
 		GlobalScript.player_hit.emit()
 		health -= dmg_amt # Reduce current health by damage amount
-		health_max -= dmg_amt
 		if health <= 0:
 			health = 0
 			GlobalScript.PLAYER_HP = 0
@@ -183,9 +182,11 @@ func die():
 	queue_free()
 
 func moreHealthPls():
+	print("HP Before: ",health)
 	health += batteryPickup
 	if health > health_max:
 		health = health_max
+	print("HP After: ",health)
 
 
 func _on_level_music_ready() -> void:
