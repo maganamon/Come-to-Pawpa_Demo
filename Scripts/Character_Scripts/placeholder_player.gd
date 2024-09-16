@@ -182,11 +182,11 @@ func die():
 	queue_free()
 
 func moreHealthPls():
-	print("HP Before: ",health)
+	#print("HP Before: ",health)
 	health += batteryPickup
 	if health > health_max:
 		health = health_max
-	print("HP After: ",health)
+	#print("HP After: ",health)
 
 
 func _on_level_music_ready() -> void:

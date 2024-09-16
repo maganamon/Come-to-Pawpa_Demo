@@ -44,15 +44,15 @@ func _process(delta):
 func _on_spawn_timer_timeout():
 	if can_spawn == true:
 		timeLeftBuddy = int(floor($DoorsTimer.time_left))
-		print(timeLeftBuddy, "-----", timeLeftBuddy % 25)
-		if (timeLeftBuddy < timeToSet) && (timeLeftBuddy % 2 <= 1):
+		#print(timeLeftBuddy, "-----", timeLeftBuddy % 25)
+		if (timeLeftBuddy < timeToSet - 40) && (timeLeftBuddy % 25 <= 1):
 			rand_BatteryX = batteryAreaX * randf()
 			rand_BatteryY = batteryAreaY * randf()
 			spawnBatteryHere = Vector2(rand_BatteryX, rand_BatteryY)
 			var newBattery = BATTERY.instantiate()
 			newBattery.global_position = $batterySpawnArea.global_position + spawnBatteryHere
 			get_tree().root.add_child(newBattery)
-			print("Battery Spawned")
+			#print("Battery Spawned")
 		for i in range(concurrent_doors):
 			random.randomize()
 			rand_int = random.randi_range(1, 5)
