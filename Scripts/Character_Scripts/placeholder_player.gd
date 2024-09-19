@@ -3,6 +3,7 @@ extends CharacterBody2D
 var isInvisible = false
 var invisibilityCooldown = 0.5
 # Movement and Knockback ##
+var speed_multiplier = 1.25
 const speed = 300.0
 var knockback = Vector2.ZERO  # To store knockback velocity
 var knockback_tween
@@ -95,23 +96,23 @@ func player_movement(_delta):
 	elif Input.is_action_pressed("new_right"):
 		currentDirection = "right"  # Set current direction to right
 		playAnimation(1)  # Play walking animation
-		velocity.x = speed  # Set velocity to move right
+		velocity.x = speed * speed_multiplier # Set velocity to move right
 		velocity.y = 0  # Stop vertical movement
 	elif Input.is_action_pressed("new_left"):
 		currentDirection = "left"  # Set current direction to left
 		playAnimation(1)  # Play walking animation
-		velocity.x = -speed  # Set velocity to move left
+		velocity.x = -speed * speed_multiplier # Set velocity to move left
 		velocity.y = 0  # Stop vertical movement
 	elif Input.is_action_pressed("new_down"):
 		currentDirection = "down"  # Set current direction to down
 		playAnimation(1)  # Play walking animation
 		velocity.x = 0  # Stop horizontal movement
-		velocity.y = speed  # Set velocity to move down
+		velocity.y = speed * speed_multiplier # Set velocity to move down
 	elif Input.is_action_pressed("new_up"):
 		currentDirection = "up"  # Set current direction to up
 		playAnimation(1)  # Play walking animation
 		velocity.x = 0  # Stop horizontal movement
-		velocity.y = -speed  # Set velocity to move up
+		velocity.y = -speed * speed_multiplier # Set velocity to move up
 	else:
 		playAnimation(0)  # Play idle animation
 		velocity.x = 0  # Stop horizontal movement
