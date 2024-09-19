@@ -33,16 +33,16 @@ func makepath() -> void:
 func _update_sprite_direction(direction):
 	if direction.x > 0:
 ## Collision update ####
-		$Area2D/left_head.disabled = true
-		$Area2D/right_head.disabled = false
+		$Area2D/RightProjectileArea.disabled = false
+		$Area2D/LeftProjectileArea.disabled = true
 ## Collision update ####
 		if $AnimatedSprite2D.offset == Vector2(-11,-17):
 			$AnimatedSprite2D.offset = Vector2(0,-17)
 		$AnimatedSprite2D.flip_h = false
 	elif direction.x < 0:
 ## Collision update ####
-		$Area2D/left_head.disabled = false
-		$Area2D/right_head.disabled = true
+		$Area2D/RightProjectileArea.disabled = true
+		$Area2D/LeftProjectileArea.disabled = false
 ## Collision update ####
 		if $AnimatedSprite2D.offset == Vector2(0,-17):
 			$AnimatedSprite2D.offset = Vector2(-11,-17)
