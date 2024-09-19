@@ -7,6 +7,7 @@ var LevelOne_Time = 120.0
 var LevelTwo_Time = 140.0
 var PLAYER_GPS = null
 var PLAYER_HP = 100
+var PLAYER_MAXENERGY = 20
 var PLAYER_ENERGY = 15
 var dog_health_hex = 0
 var dog_speed_hex = 0

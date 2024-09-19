@@ -5,6 +5,8 @@ var yellowBar
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yellowBar = $yellow_Ebar
+	$yellow_Ebar.max_value = GlobalScript.PLAYER_MAXENERGY
+	$yellow_Ebar.value = GlobalScript.PLAYER_MAXENERGY
 	$red_Hbar.value = GlobalScript.PLAYER_HP
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

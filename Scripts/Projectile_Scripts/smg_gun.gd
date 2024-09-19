@@ -2,13 +2,14 @@ extends Area2D
 
 var can_shoot = true
 var can_Erecover = false
-var ENERGY_MAX = 15
 var cooldown_time = 0.15
-var energy = 15
+var ENERGY_MAX
+var energy = 20
 var E_RecoveryTime = 0.7
 const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 
 func _ready():
+	ENERGY_MAX = GlobalScript.PLAYER_MAXENERGY
 	energy = ENERGY_MAX
 	GlobalScript.PLAYER_ENERGY = energy
 	
