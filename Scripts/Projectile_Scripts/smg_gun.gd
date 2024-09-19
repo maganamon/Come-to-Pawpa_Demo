@@ -5,7 +5,7 @@ var can_Erecover = false
 var cooldown_time = 0.15
 var ENERGY_MAX
 var energy = 20
-var E_RecoveryTime = 0.7
+var E_RecoveryTime = 0.55
 const BULLET = preload("res://Scenes/Projectile_Scenes/energy_ball.tscn")
 
 func _ready():
@@ -19,7 +19,9 @@ func _process(_delta):
 			# Start shooting
 			shoot()
 	if can_Erecover == true && Input.is_action_pressed("shoot") != true && energy < ENERGY_MAX:
-		energy += 0.33
+		energy += 0.4
+		if energy > ENERGY_MAX:
+			energy = ENERGY_MAX
 
 func shoot():
 	#Create a Bullet on Marker

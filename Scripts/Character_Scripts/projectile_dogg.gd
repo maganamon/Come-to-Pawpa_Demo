@@ -16,7 +16,7 @@ var facingDirection = ""
 var releventMarker
 var bulletSpawn_offset = Vector2(0,10)
 var can_shoot = false
-var cooldown = 0.15
+var cooldown = 0.2
 var longWait = 3.0
 var bulletsShot = 0
 var health = 1
