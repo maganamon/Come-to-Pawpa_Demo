@@ -4,6 +4,7 @@ extends CharacterBody2D
 var safe_distance = 250.0
 var tooFar = 350.0
 var move_speed = 100.0
+var PROJ_SPEED = 100.0
 # Variables
 var player_position: Vector2
 var direction: Vector2
@@ -15,14 +16,17 @@ var facingDirection = ""
 var releventMarker
 var bulletSpawn_offset = Vector2(0,10)
 var can_shoot = false
-var cooldown = 0.10
+var cooldown = 0.15
 var longWait = 3.0
 var bulletsShot = 0
 var health = 1
+@onready var animation := $AnimatedSprite2D as AnimatedSprite2D
 
 func _ready():
+	move_speed = 0.0
+	animation.play("watch_out")
 	health += GlobalScript.dog_health_hex
-	move_speed += GlobalScript.dog_speed_hex
+	PROJ_SPEED += GlobalScript.dog_speed_hex
 	releventMarker = $LeftMarker
 	$ProjEnemy_Timer.start(2.0)
 	
@@ -46,18 +50,19 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()  # Stop moving when at a safe distance
 
 func _process(_delta):
-	if (GlobalScript.PLAYER_GPS.x < global_position.x) && (facingDirection != "left"):
-		_update_directionStuff("left")
-	elif (GlobalScript.PLAYER_GPS.x > global_position.x) && (facingDirection != "right"):
-		_update_directionStuff("right")
-	if can_shoot == true:
-		_shoot()
+	if animation.animation != "watch_out":
+		if (GlobalScript.PLAYER_GPS.x < global_position.x) && (facingDirection != "left"):
+			_update_directionStuff("left")
+		elif (GlobalScript.PLAYER_GPS.x > global_position.x) && (facingDirection != "right"):
+			_update_directionStuff("right")
+		if can_shoot == true:
+			_shoot()
 		
 	
 
 func _update_directionStuff(faceThisWay):
 	if faceThisWay == "left":
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
 		#$LeftForProjectiles_Collision.disabled = false
 		#$RightForProjectile_Collision.disabled = true
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = false
@@ -65,7 +70,7 @@ func _update_directionStuff(faceThisWay):
 		facingDirection = "left"
 		releventMarker = $LeftMarker
 	else :
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 		#$LeftForProjectiles_Collision.disabled = true
 		#$RightForProjectile_Collision.disabled = false
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = true
@@ -102,3 +107,14 @@ func _on_area_2d_proj_enemy_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage_mob"):
 		var push = global_position.direction_to(body.global_position)
 		body.take_damage_mob(damage_dealt, push)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animation.animation == "watch_out":
+		$smallCIrcle_collision.disabled = false
+		move_speed = PROJ_SPEED
+		animation.play("default")
+		if (GlobalScript.PLAYER_GPS.x < global_position.x) && (facingDirection != "left"):
+			_update_directionStuff("left")
+		elif (GlobalScript.PLAYER_GPS.x > global_position.x) && (facingDirection != "right"):
+			_update_directionStuff("right")

@@ -45,7 +45,6 @@ func _process(delta):
 func _on_spawn_timer_timeout():
 	if can_spawn == true:
 		timeLeftBuddy = int(floor($DoorsTimer.time_left))
-		print(timeLeftBuddy, "-----", timeLeftBuddy % 25)
 		if (timeLeftBuddy < timeToSet - 40) && (timeLeftBuddy % 25 <= 1):
 			rand_BatteryX = batteryAreaX * randf()
 			rand_BatteryY = batteryAreaY * randf()
@@ -53,7 +52,6 @@ func _on_spawn_timer_timeout():
 			var newBattery = BATTERY.instantiate()
 			newBattery.global_position = $batterySpawnArea.global_position + spawnBatteryHere
 			get_tree().root.add_child(newBattery)
-			print("Battery Spawned")
 		for i in range(concurrent_doors):
 			random.randomize()
 			rand_int = random.randi_range(1, 6)
@@ -83,10 +81,7 @@ func _on_spawn_timer_timeout():
 			concurrent_doors = 2
 
 func spawn_enemy(spawn_area, elevator, how_many):
-	print("START OF NEW SPAWN")
 	for i in range(how_many,0,-1):
-		print("i is :" + str(i))
-		print("how_many: " + str(how_many))
 		# Play the elevator opening animation
 		elevator.play("opening")
 		# Generate a random position within the rect
@@ -111,10 +106,8 @@ func spawn_enemy(spawn_area, elevator, how_many):
 		var new_chaser = CHASER.instantiate()
 		new_chaser.global_position = spawn_area.global_position + random_position
 		get_tree().root.add_child(new_chaser)
-		print("spawn less 3 dog")
 		# Play the elevator closing animation
 		elevator.play("closing")
-	print("done spawning")
 func _on_player_died():
 	can_spawn = false
 		

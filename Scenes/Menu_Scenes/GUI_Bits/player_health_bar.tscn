@@ -51,8 +51,8 @@ offset_top = 17.0
 offset_right = 67.0
 offset_bottom = 57.0
 scale = Vector2(0.992901, 0.87239)
-max_value = 15.0
-value = 15.0
+max_value = 20.0
+value = 20.0
 texture_under = ExtResource("5_kwt2k")
 texture_progress = ExtResource("6_ataap")
 
