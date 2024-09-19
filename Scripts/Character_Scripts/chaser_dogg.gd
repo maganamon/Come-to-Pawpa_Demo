@@ -33,8 +33,6 @@ func makepath() -> void:
 func _update_sprite_direction(direction):
 	if direction.x > 0:
 ## Collision update ####
-		$"chasser-left_polygon-collision".disabled = true
-		$"chasser-right_polygon-collision".disabled = false
 		$Area2D/left_head.disabled = true
 		$Area2D/right_head.disabled = false
 ## Collision update ####
@@ -43,8 +41,6 @@ func _update_sprite_direction(direction):
 		$AnimatedSprite2D.flip_h = false
 	elif direction.x < 0:
 ## Collision update ####
-		$"chasser-left_polygon-collision".disabled = false
-		$"chasser-right_polygon-collision".disabled = true
 		$Area2D/left_head.disabled = false
 		$Area2D/right_head.disabled = true
 ## Collision update ####

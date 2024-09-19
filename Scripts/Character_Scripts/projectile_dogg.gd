@@ -58,16 +58,16 @@ func _process(_delta):
 func _update_directionStuff(faceThisWay):
 	if faceThisWay == "left":
 		$Sprite2D.flip_h = false
-		$LeftForProjectiles_Collision.disabled = false
-		$RightForProjectile_Collision.disabled = true
+		#$LeftForProjectiles_Collision.disabled = false
+		#$RightForProjectile_Collision.disabled = true
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = false
 		$Area2D_ProjEnemy/Right_ForBody_Collision.disabled = true
 		facingDirection = "left"
 		releventMarker = $LeftMarker
 	else :
 		$Sprite2D.flip_h = true
-		$LeftForProjectiles_Collision.disabled = true
-		$RightForProjectile_Collision.disabled = false
+		#$LeftForProjectiles_Collision.disabled = true
+		#$RightForProjectile_Collision.disabled = false
 		$Area2D_ProjEnemy/Left_ForBody_Collision.disabled = true
 		$Area2D_ProjEnemy/Right_ForBody_Collision.disabled = false
 		facingDirection = "right"

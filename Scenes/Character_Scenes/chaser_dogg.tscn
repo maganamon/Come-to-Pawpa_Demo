@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bw5bo38i7sv8c"]
+[gd_scene load_steps=23 format=3 uid="uid://bw5bo38i7sv8c"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/chaser_dogg.gd" id="1_u7a4c"]
 [ext_resource type="Texture2D" uid="uid://cnbd4cjru6b61" path="res://Artwork/Character_Sprites/Enemy_Sprites/Idle.png" id="2_76eun"]
@@ -129,6 +129,10 @@ height = 21.0
 radius = 6.04151
 height = 23.0006
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0itdf"]
+radius = 3.49996
+height = 19.995
+
 [node name="Chaser_Dogg" type="CharacterBody2D" groups=["Enemies"]]
 scale = Vector2(2, 2)
 collision_mask = 3
@@ -167,11 +171,10 @@ autostart = true
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="chasser-right_polygon-collision" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-19.5, 4.5, -3.5, 1, 13, 6, 18.5, -15.5, 12, -17, 6.5, -5, -16.5, -5)
-
-[node name="chasser-left_polygon-collision" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-22.5, -15, -18.5, -5, -16, 6, -3.5, 0, 9.5, 6, 9, -4, -9.5, -6, -16.5, -17.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 2)
+rotation = 1.57556
+shape = SubResource("CapsuleShape2D_0itdf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
