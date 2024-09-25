@@ -200,3 +200,13 @@ func _on_invisibility_timer_timeout() -> void:
 
 func _on_level_2_music_ready() -> void:
 	pass # Replace with function body.
+
+##For Chasers
+func _on_circle_area_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("_entered_PlayerCircle"):
+		area.get_parent()._entered_PlayerCircle(global_position)
+
+
+func _on_circle_area_area_exited(area: Area2D) -> void:
+	if area.get_parent().has_method("_leftCircle"):
+		area.get_parent()._leftCircle()

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://blsetl08vw360" path="res://Artwork/Object_Art/yellow_battery.png" id="2_iivoy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5tie"]
-radius = 81.0
-height = 242.0
+radius = 94.4445
+height = 277.778
 
 [node name="Battery_Pickup" type="Area2D" groups=["Pickups"]]
 scale = Vector2(0.18, 0.18)

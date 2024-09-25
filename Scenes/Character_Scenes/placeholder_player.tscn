@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgml0ky3lccsx"]
+[gd_scene load_steps=28 format=3 uid="uid://dgml0ky3lccsx"]
 
 [ext_resource type="Script" path="res://Scripts/Character_Scripts/placeholder_player.gd" id="1_bwr26"]
 [ext_resource type="Texture2D" uid="uid://dcortfka5txig" path="res://Artwork/Character_Sprites/placeholder_player_tile.png" id="2_5ef58"]
@@ -203,6 +203,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hy5nt"]
+radius = 40.4712
+
 [node name="placeholder_player" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 collision_mask = 3
@@ -225,4 +228,13 @@ scale = Vector2(1.2, 1.2)
 
 [node name="invisibility_Timer" type="Timer" parent="."]
 
+[node name="CircleAREA" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="ShapeforCIRCLE" type="CollisionShape2D" parent="CircleAREA"]
+position = Vector2(-0.4, -2.4)
+shape = SubResource("CircleShape2D_hy5nt")
+
 [connection signal="timeout" from="invisibility_Timer" to="." method="_on_invisibility_timer_timeout"]
+[connection signal="area_entered" from="CircleAREA" to="." method="_on_circle_area_area_entered"]
+[connection signal="area_exited" from="CircleAREA" to="." method="_on_circle_area_area_exited"]

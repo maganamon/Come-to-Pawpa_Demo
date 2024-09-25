@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animation := $AnimatedSprite2D as AnimatedSprite2D
 var speed = 400  # Adjust the speed of the mob as needed
 var CHASER_SPEED = 400
+var inCircle = false
 var mob
 var direction = Vector2.ZERO
  # Amount of damage the enemy will inflict on the player
@@ -18,8 +19,11 @@ func _ready():
 
 func _process(_delta):
 	if animation.animation != "watch_out":
-		direction = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity = direction * speed
+		if inCircle == true:
+			velocity = direction * speed
+		else:
+			direction = to_local(nav_agent.get_next_path_position()).normalized()
+			velocity = direction * speed
 	if velocity != Vector2(0,0):
 		animation.play("run_right")
 	_update_sprite_direction(direction)
@@ -28,8 +32,7 @@ func _process(_delta):
 		
 		
 func makepath() -> void:
-	if GlobalScript.PLAYER_GPS != null:
-		nav_agent.target_position = GlobalScript.PLAYER_GPS
+	nav_agent.target_position = GlobalScript.PLAYER_GPS
 
 		
 # Update the sprite direction based on the movement direction
@@ -68,6 +71,14 @@ func _on_area_2d_body_entered(body):
 func _on_nav_timer_timeout():
 	makepath()
 
+func _entered_PlayerCircle(player_position):
+	direction = global_position.direction_to(player_position)
+	inCircle = true
+	
+func _leftCircle():
+	direction = to_local(nav_agent.get_next_path_position()).normalized()
+	inCircle = false
+	
 
 func _on_animated_sprite_2d_animation_finished():
 	if animation.animation == "watch_out":
