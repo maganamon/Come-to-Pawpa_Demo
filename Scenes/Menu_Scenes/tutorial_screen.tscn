@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dw54id8e43enb"]
+[gd_scene load_steps=15 format=3 uid="uid://dw54id8e43enb"]
 
 [ext_resource type="Script" path="res://tutorial_screen.gd" id="1_8y503"]
 [ext_resource type="Texture2D" uid="uid://w83ojdkgqxv1" path="res://Artwork/Tutorial_Art/Game_Screenshots/CTP Moving.png" id="2_fdr8w"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bihl2tc0jec4i" path="res://Artwork/Tutorial_Art/mouse clicked.png" id="11_i15ph"]
 [ext_resource type="Texture2D" uid="uid://7pi87d1l8b7s" path="res://Artwork/GUI_Art/Buttons_Art/Continue_unpressed.png" id="12_a4u5c"]
 [ext_resource type="Texture2D" uid="uid://yygn1bgjkhu" path="res://Artwork/GUI_Art/Buttons_Art/Continue_pressed.png" id="13_7e0hh"]
+[ext_resource type="AudioStream" uid="uid://bdjla8s85o82o" path="res://Audio/Music/Come to PawPa - Molten Metal Militia.mp3" id="14_jh6rn"]
 
 [node name="tutorial_screen" type="Control"]
 layout_mode = 3
@@ -28,6 +29,7 @@ position = Vector2(602, 352)
 zoom = Vector2(0.45, 0.45)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -276.0
 offset_top = -162.0
 offset_right = 1329.0
@@ -119,5 +121,10 @@ texture_pressed = ExtResource("13_7e0hh")
 texture_hover = ExtResource("12_a4u5c")
 
 [node name="menu_timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_jh6rn")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Continue_Button" to="." method="_on_continue_button_pressed"]
