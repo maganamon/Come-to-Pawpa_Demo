@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdjla8s85o82o"
+path="res://.godot/imported/Come to PawPa - Molten Metal Militia.mp3-fe2be19a42e486c6cabb4c9e96f0ac5f.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Come to PawPa - Molten Metal Militia.mp3"
+dest_files=["res://.godot/imported/Come to PawPa - Molten Metal Militia.mp3-fe2be19a42e486c6cabb4c9e96f0ac5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
