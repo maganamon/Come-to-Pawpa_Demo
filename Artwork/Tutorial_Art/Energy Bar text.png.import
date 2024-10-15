@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp0f23dnt1kft"
-path="res://.godot/imported/mouse not clicked (2).png-b21193f92dbe51c7a54b86325d129bcf.ctex"
+uid="uid://dxx3b6wocepu6"
+path="res://.godot/imported/Energy Bar text.png-d8dd67e24c971a7e547b6cd213f3bee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/Tutorial_Art/mouse not clicked (2).png"
-dest_files=["res://.godot/imported/mouse not clicked (2).png-b21193f92dbe51c7a54b86325d129bcf.ctex"]
+source_file="res://Artwork/Tutorial_Art/Energy Bar text.png"
+dest_files=["res://.godot/imported/Energy Bar text.png-d8dd67e24c971a7e547b6cd213f3bee7.ctex"]
 
 [params]
 

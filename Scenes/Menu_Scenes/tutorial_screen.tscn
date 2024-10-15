@@ -1,19 +1,31 @@
-[gd_scene load_steps=15 format=3 uid="uid://dw54id8e43enb"]
+[gd_scene load_steps=27 format=3 uid="uid://dw54id8e43enb"]
 
 [ext_resource type="Script" path="res://tutorial_screen.gd" id="1_8y503"]
 [ext_resource type="Texture2D" uid="uid://w83ojdkgqxv1" path="res://Artwork/Tutorial_Art/Game_Screenshots/CTP Moving.png" id="2_fdr8w"]
-[ext_resource type="Texture2D" uid="uid://r1l684kpmac5" path="res://Artwork/Tutorial_Art/pimp_dogg (1).png" id="2_ojjj0"]
+[ext_resource type="Texture2D" uid="uid://r1l684kpmac5" path="res://Artwork/Tutorial_Art/pimp_dogg.png" id="2_ojjj0"]
 [ext_resource type="Texture2D" uid="uid://cyo1x1po3rkiy" path="res://Artwork/Tutorial_Art/Game_Screenshots/depleted energy bar ctp.png" id="4_d05jd"]
 [ext_resource type="Texture2D" uid="uid://oqvcmsh6roor" path="res://Artwork/Tutorial_Art/Game_Screenshots/full energy bar ctp.png" id="5_cx225"]
 [ext_resource type="Texture2D" uid="uid://d3bfbe3ixhgb5" path="res://Artwork/Tutorial_Art/Game_Screenshots/health pickup ctp.png" id="6_l7s6y"]
 [ext_resource type="Texture2D" uid="uid://kawsk5kpnbmo" path="res://Artwork/Tutorial_Art/Game_Screenshots/single fire CTP.png" id="7_i3p3e"]
 [ext_resource type="Texture2D" uid="uid://chjiobnoync38" path="res://Artwork/Tutorial_Art/Game_Screenshots/gun overheating ctp.png" id="8_7s2pp"]
 [ext_resource type="Texture2D" uid="uid://danesrv1ya17v" path="res://Artwork/Tutorial_Art/Game_Screenshots/rapid fire CTP.png" id="9_khfeb"]
-[ext_resource type="Texture2D" uid="uid://cp0f23dnt1kft" path="res://Artwork/Tutorial_Art/mouse not clicked (2).png" id="10_fxm7d"]
+[ext_resource type="Texture2D" uid="uid://cp0f23dnt1kft" path="res://Artwork/Tutorial_Art/mouse not clicked.png" id="10_fxm7d"]
 [ext_resource type="Texture2D" uid="uid://bihl2tc0jec4i" path="res://Artwork/Tutorial_Art/mouse clicked.png" id="11_i15ph"]
 [ext_resource type="Texture2D" uid="uid://7pi87d1l8b7s" path="res://Artwork/GUI_Art/Buttons_Art/Continue_unpressed.png" id="12_a4u5c"]
 [ext_resource type="Texture2D" uid="uid://yygn1bgjkhu" path="res://Artwork/GUI_Art/Buttons_Art/Continue_pressed.png" id="13_7e0hh"]
 [ext_resource type="AudioStream" uid="uid://bdjla8s85o82o" path="res://Audio/Music/Come to PawPa - Molten Metal Militia.mp3" id="14_jh6rn"]
+[ext_resource type="Texture2D" uid="uid://vfp7l6tegnat" path="res://Artwork/Tutorial_Art/WASD directions.png" id="15_vp4j4"]
+[ext_resource type="Texture2D" uid="uid://bq14brplcf448" path="res://Artwork/Tutorial_Art/Press LMB.png" id="18_ujlcf"]
+[ext_resource type="Texture2D" uid="uid://crulkeexgwj50" path="res://Artwork/Tutorial_Art/Hold LMB.png" id="19_1dfsh"]
+[ext_resource type="Texture2D" uid="uid://dvjfcv8h3jd1p" path="res://Artwork/Tutorial_Art/Survive banner.png" id="20_jctv4"]
+[ext_resource type="Texture2D" uid="uid://b84c7ekjadj7c" path="res://Artwork/Tutorial_Art/first floor.png" id="20_pyq4p"]
+[ext_resource type="Texture2D" uid="uid://db644d18vm3a3" path="res://Artwork/Tutorial_Art/health text.png" id="21_8apsg"]
+[ext_resource type="Texture2D" uid="uid://boffvd20ipqkx" path="res://Artwork/Tutorial_Art/Spawn Alert CTP.png" id="22_7pwg4"]
+[ext_resource type="Texture2D" uid="uid://bq6beev6uovfw" path="res://Artwork/Tutorial_Art/MOVEMENT Text.png" id="22_ldeoy"]
+[ext_resource type="Texture2D" uid="uid://du87fwfsrl88o" path="res://Artwork/Tutorial_Art/Game_Screenshots/Game floor.png" id="23_68tob"]
+[ext_resource type="Texture2D" uid="uid://bxygkxj525awf" path="res://Artwork/Tutorial_Art/Health bar text.png" id="25_ucrqq"]
+[ext_resource type="Texture2D" uid="uid://dxx3b6wocepu6" path="res://Artwork/Tutorial_Art/Energy Bar text.png" id="25_xn887"]
+[ext_resource type="Texture2D" uid="uid://bamh3lvffahqn" path="res://Artwork/Tutorial_Art/Overheat warning text.png" id="26_n8fso"]
 
 [node name="tutorial_screen" type="Control"]
 layout_mode = 3
@@ -47,65 +59,66 @@ texture = ExtResource("2_ojjj0")
 [node name="pawpa_in_game-screenshot" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.509804)
 layout_mode = 0
-offset_left = 36.0
-offset_top = 68.0
-offset_right = 564.0
-offset_bottom = 503.0
-scale = Vector2(0.9, 0.9)
+offset_left = 19.0
+offset_top = 24.0
+offset_right = 626.0
+offset_bottom = 511.0
+scale = Vector2(0.85, 0.85)
 texture = ExtResource("2_fdr8w")
 
 [node name="DepletedEnergyBarCtp" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(198, 650)
-scale = Vector2(0.63, 0.63)
+z_index = 1
+position = Vector2(622, 504)
+scale = Vector2(0.466959, 0.443726)
 texture = ExtResource("4_d05jd")
 
 [node name="FullEnergyBarCtp" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(199, 556)
-scale = Vector2(0.584017, 0.589118)
+z_index = 1
+position = Vector2(131, 505)
+scale = Vector2(0.437164, 0.43761)
 texture = ExtResource("5_cx225")
 
 [node name="HealthPickupCtp" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.45098)
-position = Vector2(1046, 526)
-scale = Vector2(0.8, 0.8)
+position = Vector2(1054, 330)
+scale = Vector2(1.30031, 1.13959)
 texture = ExtResource("6_l7s6y")
 
 [node name="SingleFireCtp" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(864, 115)
+position = Vector2(740, 116)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("7_i3p3e")
 
 [node name="GunOverheatingCtp" type="Sprite2D" parent="."]
-position = Vector2(653, 602)
-scale = Vector2(0.15, 0.15)
+modulate = Color(1, 1, 1, 0.54902)
+position = Vector2(736, 593)
+scale = Vector2(0.254727, 0.235737)
 texture = ExtResource("8_7s2pp")
 
 [node name="RapidFireCtp" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(930, 345)
+position = Vector2(739, 329)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("9_khfeb")
 
 [node name="MouseNotClicked_singlefire" type="Sprite2D" parent="."]
-position = Vector2(897, 118)
+position = Vector2(772, 106)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("10_fxm7d")
 
 [node name="MouseNotClicked_rapidfire" type="Sprite2D" parent="."]
-position = Vector2(982, 350)
+position = Vector2(800, 324)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("10_fxm7d")
 
 [node name="MouseClicked_singlefire" type="Sprite2D" parent="."]
-position = Vector2(982, 112)
+position = Vector2(847, 103)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("11_i15ph")
 
 [node name="MouseClicked_rapidfire" type="Sprite2D" parent="."]
-position = Vector2(1061, 345)
+position = Vector2(877, 318)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("11_i15ph")
 
@@ -126,5 +139,68 @@ texture_hover = ExtResource("12_a4u5c")
 stream = ExtResource("14_jh6rn")
 autoplay = true
 parameters/looping = true
+
+[node name="WasdDirections" type="Sprite2D" parent="."]
+position = Vector2(409, 267)
+scale = Vector2(3, 2.779)
+texture = ExtResource("15_vp4j4")
+
+[node name="PressLmb" type="Sprite2D" parent="."]
+position = Vector2(736, 180)
+scale = Vector2(1.20199, 1.21528)
+texture = ExtResource("18_ujlcf")
+
+[node name="HoldLmb" type="Sprite2D" parent="."]
+position = Vector2(745, 395)
+scale = Vector2(1.20951, 1.34091)
+texture = ExtResource("19_1dfsh")
+
+[node name="SurviveBanner" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(657, -4)
+scale = Vector2(1.7, 1.685)
+texture = ExtResource("20_jctv4")
+
+[node name="FirstFloor" type="Sprite2D" parent="."]
+position = Vector2(113, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("20_pyq4p")
+
+[node name="HealthText" type="Sprite2D" parent="."]
+position = Vector2(1042, 268)
+scale = Vector2(1.55, 1.819)
+texture = ExtResource("21_8apsg")
+
+[node name="SpawnAlertCtp" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(1053, 128)
+scale = Vector2(0.7, 0.789)
+texture = ExtResource("22_7pwg4")
+
+[node name="MovementText" type="Sprite2D" parent="."]
+position = Vector2(372, 89)
+scale = Vector2(2, 2)
+texture = ExtResource("22_ldeoy")
+
+[node name="GameFloor" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(241, 594)
+scale = Vector2(1.44406, 1.4104)
+texture = ExtResource("23_68tob")
+
+[node name="EnergyBarText" type="Sprite2D" parent="."]
+position = Vector2(360, 533.25)
+scale = Vector2(1.02206, 1.28378)
+texture = ExtResource("25_xn887")
+
+[node name="HealthBarText" type="Sprite2D" parent="."]
+position = Vector2(363.5, 494.5)
+scale = Vector2(1.10294, 1.18421)
+texture = ExtResource("25_ucrqq")
+
+[node name="OverheatWarningText" type="Sprite2D" parent="."]
+position = Vector2(247, 635)
+scale = Vector2(1.4, 1.249)
+texture = ExtResource("26_n8fso")
 
 [connection signal="pressed" from="Continue_Button" to="." method="_on_continue_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r1l684kpmac5"
-path="res://.godot/imported/pimp_dogg (1).png-5a898c717d777a3ca97d0932d58daea8.ctex"
+uid="uid://cp0f23dnt1kft"
+path="res://.godot/imported/mouse not clicked.png-36a10506b8dcdcfccd15fa009d6adf1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/Tutorial_Art/pimp_dogg (1).png"
-dest_files=["res://.godot/imported/pimp_dogg (1).png-5a898c717d777a3ca97d0932d58daea8.ctex"]
+source_file="res://Artwork/Tutorial_Art/mouse not clicked.png"
+dest_files=["res://.godot/imported/mouse not clicked.png-36a10506b8dcdcfccd15fa009d6adf1c.ctex"]
 
 [params]
 
