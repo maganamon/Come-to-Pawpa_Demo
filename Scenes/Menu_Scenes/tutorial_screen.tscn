@@ -124,10 +124,10 @@ texture = ExtResource("11_i15ph")
 
 [node name="Continue_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 982.0
-offset_top = 632.0
-offset_right = 1071.0
-offset_bottom = 671.0
+offset_left = 989.0
+offset_top = 598.0
+offset_right = 1078.0
+offset_bottom = 637.0
 scale = Vector2(2.8, 2.8)
 texture_normal = ExtResource("12_a4u5c")
 texture_pressed = ExtResource("13_7e0hh")

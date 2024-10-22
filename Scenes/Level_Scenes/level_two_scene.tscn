@@ -33,7 +33,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ou222"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2hk6"]
 texture = ExtResource("1_mgudr")
 4:0/0 = 0
 5:0/0 = 0
@@ -298,7 +298,7 @@ texture = ExtResource("1_mgudr")
 
 [sub_resource type="TileSet" id="TileSet_wahy8"]
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_ou222")
+sources/0 = SubResource("TileSetAtlasSource_t2hk6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn3sj"]
 size = Vector2(24.146, 98.7774)
