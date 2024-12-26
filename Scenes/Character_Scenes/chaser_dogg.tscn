@@ -216,7 +216,7 @@ script = ExtResource("1_u7a4c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.5, 0)
 sprite_frames = SubResource("SpriteFrames_gbgie")
-animation = &"run_right"
+animation = &"watch_out"
 offset = Vector2(-11, -17)
 flip_h = true
 

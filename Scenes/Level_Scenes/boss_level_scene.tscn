@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dq1peei277v1l"]
+[gd_scene load_steps=24 format=3 uid="uid://dq1peei277v1l"]
 
 [ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_2sk3b"]
 [ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="1_a1rly"]
 [ext_resource type="Texture2D" uid="uid://ubp4hfnydtap" path="res://Artwork/Backgrounds/Boss background.png" id="2_nt4du"]
 [ext_resource type="PackedScene" uid="uid://dqvgm3q4nx6h1" path="res://Scenes/Menu_Scenes/entire_gui.tscn" id="4_a5x0o"]
 [ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="5_4x3l6"]
+[ext_resource type="PackedScene" uid="uid://dxablc51tlcbl" path="res://Scenes/Character_Scenes/pimp_dogg.tscn" id="6_8xido"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ymwm4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -380,7 +381,7 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_rgksl")
 
 [node name="left_stair" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(193, 356)
+position = Vector2(-36, 360)
 shape = SubResource("RectangleShape2D_if7jp")
 
 [node name="top_stair" type="CollisionShape2D" parent="StaticBody2D"]
@@ -388,7 +389,7 @@ position = Vector2(615, 168)
 shape = SubResource("RectangleShape2D_no3b2")
 
 [node name="right_stair" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1047.25, 362)
+position = Vector2(1284, 366)
 shape = SubResource("RectangleShape2D_1j245")
 
 [node name="top_left_column" type="CollisionShape2D" parent="StaticBody2D"]
@@ -409,6 +410,8 @@ shape = SubResource("RectangleShape2D_f0a0e")
 
 [node name="placeholder_player" parent="." instance=ExtResource("1_a1rly")]
 position = Vector2(602, 347)
+disable_mode = 1
+collision_layer = 3
 
 [node name="EntireGUI" parent="." instance=ExtResource("4_a5x0o")]
 offset = Vector2(0, -30)
@@ -416,3 +419,9 @@ transform = Transform2D(1, 0, 0, 1, 0, -30)
 follow_viewport_enabled = true
 
 [node name="SoundFX_Global" parent="." instance=ExtResource("5_4x3l6")]
+
+[node name="Pimp_Dogg" parent="." instance=ExtResource("6_8xido")]
+z_index = 0
+position = Vector2(858, 226)
+collision_layer = 3
+collision_mask = 3

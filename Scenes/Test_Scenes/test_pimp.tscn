@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://iehigtn72ck6"]
+[gd_scene load_steps=11 format=3 uid="uid://drcku70uegcmr"]
 
-[ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_lu7em"]
-[ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="1_rhdl3"]
-[ext_resource type="PackedScene" uid="uid://bw5bo38i7sv8c" path="res://Scenes/Character_Scenes/chaser_dogg.tscn" id="2_u2uod"]
-[ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="4_y4hot"]
-[ext_resource type="PackedScene" uid="uid://dxablc51tlcbl" path="res://Scenes/Character_Scenes/pimp_dogg.tscn" id="5_g8llo"]
+[ext_resource type="Texture2D" uid="uid://denqcjxh4myjy" path="res://Artwork/Backgrounds/tileset x1.png" id="1_c2viu"]
+[ext_resource type="PackedScene" uid="uid://dgml0ky3lccsx" path="res://Scenes/Character_Scenes/placeholder_player.tscn" id="3_opcnb"]
+[ext_resource type="PackedScene" uid="uid://dxablc51tlcbl" path="res://Scenes/Character_Scenes/pimp_dogg.tscn" id="4_ac5c3"]
+[ext_resource type="PackedScene" uid="uid://dmbsmxsqguxp5" path="res://Scenes/Menu_Scenes/sound_fx_global.tscn" id="4_oubu6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y88ac"]
 vertices = PackedVector2Array(4, 4, -4, 4, -4, -4, 4, -4)
@@ -31,7 +30,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -4, 4, -4, 4, 4, -4
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob6pt"]
-texture = ExtResource("1_lu7em")
+texture = ExtResource("1_c2viu")
 texture_region_size = Vector2i(8, 8)
 8:0/0 = 0
 9:0/0 = 0
@@ -983,15 +982,9 @@ layer_0/tile_data = PackedInt32Array(-327688, 9043970, 5, -262152, 9043970, 6, -
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
-[node name="Chaser_Dogg2" parent="." instance=ExtResource("2_u2uod")]
-position = Vector2(249, 183)
-
-[node name="Chaser_Dogg3" parent="." instance=ExtResource("2_u2uod")]
-position = Vector2(-134, 188)
-
-[node name="placeholder_player" parent="." instance=ExtResource("1_rhdl3")]
+[node name="placeholder_player" parent="." instance=ExtResource("3_opcnb")]
 position = Vector2(0, -203)
 
-[node name="SoundFX_Global" parent="." instance=ExtResource("4_y4hot")]
+[node name="SoundFX_Global" parent="." instance=ExtResource("4_oubu6")]
 
-[node name="Pimp_Dogg" parent="." instance=ExtResource("5_g8llo")]
+[node name="Pimp_Dogg" parent="." instance=ExtResource("4_ac5c3")]
